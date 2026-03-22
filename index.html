@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SCHNEIDER – Daňový doklad</title>
+  </head>
+  <body
+    class="m-0 flex min-h-screen items-start justify-center overflow-x-auto bg-[#a4a4a4] p-7 font-[Arial,Helvetica,sans-serif] text-black max-[760px]:p-4 print:bg-white print:p-0"
+  >
+    <main
+      class="box-border flex min-h-[297mm] w-[210mm] flex-col border border-[#ddd] bg-white px-6 pb-[18px] pt-[22px] shadow-[0_6px_20px_rgba(0,0,0,0.2)] print:h-[297mm] print:border-0 print:shadow-none"
+    >
+      <div class="flex flex-1 flex-col">
+        <img
+          class="h-auto w-48 mb-4"
+          src="/src/WhatsApp Image 2026-03-21 at 16.36.42.jpeg"
+          alt="CONSTRUCTION SCHNEIDER"
+        />
+
+        <div class="flex items-end justify-between">
+          <div class="flex flex-col">
+            <h1 class="m-0 mb-[7px] text-xl font-extrabold tracking-[-0.15px]">
+              DAŇOVÝ DOKLAD (FAKTURA)
+            </h1>
+            <div class="text-sm font-bold leading-tight">
+              VARIANILNÍ SYMBOL:
+            </div>
+            <div class="text-sm font-bold leading-tight">
+              EVIDENČNÍ ČÍSLO DAŇOVÉHO DOKLADU:
+            </div>
+          </div>
+          <div
+            class="text-right flex flex-col gap-2 text-[12px] leading-tight text-gray-500"
+          >
+            <p>Strana č.: proměnné</p>
+            <p>
+              Vaše objednávka
+              <br />
+              Více objednávek
+              <br />
+              Dodací list
+            </p>
+          </div>
+        </div>
+
+        <section
+          class="mt-4 w-full grid grid-cols-2 gap-2"
+          aria-label="Dodavatel a odběratel"
+        >
+          <div>
+            <div
+              class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
+            >
+              Dodavatel
+            </div>
+            <div
+              class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
+            >
+              <div class="mb-[2px] text-[6px] font-bold">
+                SCHNEIDER construction s.r.o.
+              </div>
+              <div>IČ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proměnné</div>
+              <div>DIČ &nbsp;&nbsp;&nbsp; CZ279299</div>
+              <div>Příkopská 905/5</div>
+              <div>747 23 Štáblovice</div>
+              <div class="text-[#666]">fax</div>
+              <div>e-mail: info@schneiderconstruction.cz</div>
+              <div>tel.: 332 661 490</div>
+              <div class="text-[#666]">
+                zapsaná: obchodní rejstřík KS Ostrava
+              </div>
+              <div class="text-[#666]">plátce DPH od 4. dubna 2008</div>
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
+            >
+              Odběratel
+            </div>
+            <div
+              class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
+            >
+              <div class="text-[6px] font-bold leading-[1.45]">
+                Název odběratele: proměnné
+              </div>
+              <div class="text-[6px] font-bold leading-[1.45]">
+                Adresa odběratele (proměnné):
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="mt-[2px] grid grid-cols-[3fr_1fr] gap-2"
+          aria-label="Platební údaje"
+        >
+          <div class="border border-black">
+            <div
+              class="min-h-[70px] border-b-2 border-[#cfcfcf] bg-[#ececec] p-2"
+            >
+              <div class="flex items-baseline gap-2">
+                <span class="min-w-[72px] text-xs text-[#444]">Číslo účtu</span>
+                <span class="text-sm font-extrabold tracking-[0.1px]"
+                  >35-8095640217 / 0100</span
+                >
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="min-w-[72px] text-xs text-[#444]">IBAN</span>
+                <span class="text-sm font-extrabold tracking-[0.1px]"
+                  >CZ2501000000358095640217</span
+                >
+              </div>
+              <div
+                class="grid grid-cols-[68px_110px_1fr] items-end gap-x-3 gap-y-px"
+              >
+                <div class="text-xs text-[#444]">Číslo banky</div>
+                <div class="text-xs text-[#444]">SWIFT</div>
+                <div class="text-xs text-[#444]">Název banky</div>
+                <div class="text-sm font-bold">0100</div>
+                <div class="text-sm font-bold">KOMBCZPP</div>
+                <div class="text-sm font-bold">KB korunový účet</div>
+              </div>
+            </div>
+
+            <div class="p-2 text-xs">
+              <div class="mb-[2px] flex gap-10">
+                <span class="w-3 text-[#444]">IČ</span><strong>Proměnné</strong>
+              </div>
+              <div class="mb-[2px] flex gap-10">
+                <span class="w-3 text-[#444]">DIČ</span
+                ><strong>Proměnné</strong>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center justify-center text-[28px] font-bold border border-black"
+            aria-label="QR placeholder"
+          >
+            QR
+          </div>
+        </section>
+
+        <section
+          class="mt-[2px] grid grid-cols-2 border border-black"
+          aria-label="Dodací a platební informace"
+        >
+          <div
+            class="border-r border-black p-2 text-[8px] leading-[1.35] flex flex-col justify-between h-full text-[#666]"
+          >
+            <div class="flex flex-col">
+              <div class="">Lokalita objednávky</div>
+              <div class="">Místo dodání</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <span class="w-22">Fakturu vystavil</span>
+                <strong class="text-black">Proměnné</strong>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-22">Text úhrady/poznámky</span>
+                <strong class="text-black">Proměnné</strong>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-[1.45fr_0.75fr] gap-x-[10px] gap-y-[2px] p-2 text-[8px] leading-[1.3] text-[#666]"
+          >
+            <div>Datum objednávky/zakázka</div>
+            <div class="font-bold text-black">Proměnné</div>
+            <div>DUZP / DUPL / DAT</div>
+            <div class="font-bold text-black">Proměnné</div>
+            <div>Způsob úhrady</div>
+            <div class="font-bold text-black">Proměnné</div>
+            <div>Datum splatnosti</div>
+            <div class="font-bold text-black">Proměnné</div>
+            <div>Datum platby termín</div>
+            <div class="font-bold text-black">Proměnné</div>
+            <div>Datum platby termín</div>
+            <div class="font-bold text-black">Proměnné</div>
+          </div>
+        </section>
+
+        <section
+          class="mt-2 grid grid-cols-[62px_95px_70px_52px_48px_55px_45px_44px_1fr] items-end gap-x-[5px] text-[5px] leading-[1.1]"
+          aria-label="Projekt a položky hlavička"
+        >
+          <div>
+            <span class="mb-[2px] block text-[#666]">Projekt/výroba</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Jméno pracovníka</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">MJ zakázky</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Cena</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Počet</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Měrná mj</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Sazba</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Celkem</span>
+            <strong>Proměnné</strong>
+          </div>
+          <div>
+            <span class="mb-[2px] block text-[#666]">Celkem s DPH</span>
+            <strong>Proměnné</strong>
+          </div>
+        </section>
+
+        <table
+          class="my-4 w-full border-collapse text-[5px]"
+          aria-label="Položky faktury"
+        >
+          <colgroup>
+            <col class="w-[5%]" />
+            <col class="w-[23%]" />
+            <col class="w-[9%]" />
+            <col class="w-[7%]" />
+            <col class="w-[9%]" />
+            <col class="w-[10%]" />
+            <col class="w-[9%]" />
+            <col class="w-[13%]" />
+            <col class="w-[15%]" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
+              >
+                Poř.
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-left font-bold whitespace-nowrap"
+              >
+                Název položky
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
+              >
+                Jedn.
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
+              >
+                DPH
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
+              >
+                Množství
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
+              >
+                J. cena
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
+              >
+                Celkem
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
+              >
+                Základ DPH
+              </th>
+              <th
+                class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
+              >
+                Celkem s DPH
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="h-[10px]">
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                1
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                0 %
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+            </tr>
+            <tr class="h-[10px]">
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                2
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                0 %
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+            </tr>
+            <tr class="h-[10px]">
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                3
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                0 %
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+            </tr>
+            <tr class="h-[10px]">
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                4
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-center">
+                0 %
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+              <td class="border-b border-[#ececec] px-[2px] py-px text-right">
+                Proměnné
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="flex-1"></div>
+
+        <div class="flex flex-col border-2 border-black">
+          <h1 class="text-sm font-bold mb-2">Daňová rekapitulace celkem</h1>
+          <div
+            class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-1 pr-10 mb-1"
+          >
+            <div class="flex justify-between">
+              <span>Sazba DPH</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between"></div>
+            <div class="flex justify-between">
+              <span>DPH %</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Sazba DPH</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Základ daně</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>DPH %</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Sazba DPH</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Základ daně</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>DPH %</span>
+              <strong class="text-black">Proměnné</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-[6px] pr-[42px]"
+        >
+          <div class="flex justify-between">
+            <span>Sazba DPH</span>
+            <strong class="text-black">Proměnné</strong>
+          </div>
+          <div class="flex justify-between">
+            <span>Sazba DPH</span>
+            <strong class="text-black">Proměnné</strong>
+          </div>
+          <div class="flex justify-between">
+            <span>DPH %</span>
+            <strong class="text-black">Proměnné</strong>
+          </div>
+          <div class="flex justify-between">
+            <span>Sazba DPH</span>
+            <strong class="text-black">Proměnné</strong>
+          </div>
+        </div>
+
+        <div
+          class="mt-[3px] flex flex-col justify-between bg-[#EDEDED] p-1 pr-10 gap-2"
+        >
+          <div class="grid grid-cols-3 text-[8px] leading-[1.35] text-[#555]">
+            <div>Obchodní zást.</div>
+            <div class="text-center">Proměnné</div>
+            <div class="text-right">Zaúčtoval</div>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[8px] font-bold">Celkem k úhradě</span>
+            <span class="text-[8px] font-bold">Proměnné</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
