@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css" />
-    <title>SCHNEIDER – Daňový doklad</title>
+    <title>SCHNEIDER – Tax Document</title>
   </head>
   <body
     class="m-0 flex min-h-screen items-start justify-center overflow-x-auto bg-[#a4a4a4] p-7 font-[Arial,Helvetica,sans-serif] text-black max-[760px]:p-4 print:bg-white print:p-0"
@@ -22,38 +22,38 @@
         <div class="flex items-end justify-between">
           <div class="flex flex-col">
             <h1 class="m-0 mb-[7px] text-xl font-extrabold tracking-[-0.15px]">
-              DAŇOVÝ DOKLAD (FAKTURA)
+              TAX DOCUMENT (INVOICE)
             </h1>
             <div class="text-sm font-bold leading-tight">
-              VARIANILNÍ SYMBOL:
+              VARIABLE SYMBOL:
             </div>
             <div class="text-sm font-bold leading-tight">
-              EVIDENČNÍ ČÍSLO DAŇOVÉHO DOKLADU:
+              EVIDENCE NUMBER OF TAX DOCUMENT:
             </div>
           </div>
           <div
             class="text-right flex flex-col gap-2 text-[12px] leading-tight text-gray-500"
           >
-            <p>Strana č.: proměnné</p>
+            <p>Page no.: variable</p>
             <p>
-              Vaše objednávka
+              Your order
               <br />
-              Více objednávek
+              Multiple orders
               <br />
-              Dodací list
+              Delivery note
             </p>
           </div>
         </div>
 
         <section
           class="mt-4 w-full grid grid-cols-2 gap-2"
-          aria-label="Dodavatel a odběratel"
+          aria-label="Supplier and customer"
         >
           <div>
             <div
               class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
             >
-              Dodavatel
+              Supplier
             </div>
             <div
               class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
@@ -61,17 +61,17 @@
               <div class="mb-[2px] text-[6px] font-bold">
                 SCHNEIDER construction s.r.o.
               </div>
-              <div>IČ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proměnné</div>
-              <div>DIČ &nbsp;&nbsp;&nbsp; CZ279299</div>
+              <div>Co. ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Variable</div>
+              <div>VAT No. &nbsp;&nbsp;&nbsp; CZ279299</div>
               <div>Příkopská 905/5</div>
               <div>747 23 Štáblovice</div>
               <div class="text-[#666]">fax</div>
               <div>e-mail: info@schneiderconstruction.cz</div>
               <div>tel.: 332 661 490</div>
               <div class="text-[#666]">
-                zapsaná: obchodní rejstřík KS Ostrava
+                registered: commercial register KS Ostrava
               </div>
-              <div class="text-[#666]">plátce DPH od 4. dubna 2008</div>
+              <div class="text-[#666]">VAT payer since April 4, 2008</div>
             </div>
           </div>
 
@@ -79,16 +79,16 @@
             <div
               class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
             >
-              Odběratel
+              Customer
             </div>
             <div
               class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
             >
               <div class="text-[6px] font-bold leading-[1.45]">
-                Název odběratele: proměnné
+                Customer name: variable
               </div>
               <div class="text-[6px] font-bold leading-[1.45]">
-                Adresa odběratele (proměnné):
+                Customer address (variable):
               </div>
             </div>
           </div>
@@ -96,14 +96,14 @@
 
         <section
           class="mt-[2px] grid grid-cols-[3fr_1fr] gap-2"
-          aria-label="Platební údaje"
+          aria-label="Payment details"
         >
           <div class="border border-black">
             <div
               class="min-h-[70px] border-b-2 border-[#cfcfcf] bg-[#ececec] p-2"
             >
               <div class="flex items-baseline gap-2">
-                <span class="min-w-[72px] text-xs text-[#444]">Číslo účtu</span>
+                <span class="min-w-[72px] text-xs text-[#444]">Account number</span>
                 <span class="text-sm font-extrabold tracking-[0.1px]"
                   >35-8095640217 / 0100</span
                 >
@@ -117,22 +117,22 @@
               <div
                 class="grid grid-cols-[68px_110px_1fr] items-end gap-x-3 gap-y-px"
               >
-                <div class="text-xs text-[#444]">Číslo banky</div>
+                <div class="text-xs text-[#444]">Bank number</div>
                 <div class="text-xs text-[#444]">SWIFT</div>
-                <div class="text-xs text-[#444]">Název banky</div>
+                <div class="text-xs text-[#444]">Bank name</div>
                 <div class="text-sm font-bold">0100</div>
                 <div class="text-sm font-bold">KOMBCZPP</div>
-                <div class="text-sm font-bold">KB korunový účet</div>
+                <div class="text-sm font-bold">KB Crown Account</div>
               </div>
             </div>
 
             <div class="p-2 text-xs">
               <div class="mb-[2px] flex gap-10">
-                <span class="w-3 text-[#444]">IČ</span><strong>Proměnné</strong>
+                <span class="w-3 text-[#444]">Co. ID</span><strong>Variable</strong>
               </div>
               <div class="mb-[2px] flex gap-10">
-                <span class="w-3 text-[#444]">DIČ</span
-                ><strong>Proměnné</strong>
+                <span class="w-3 text-[#444]">VAT No.</span
+                ><strong>Variable</strong>
               </div>
             </div>
           </div>
@@ -147,23 +147,23 @@
 
         <section
           class="mt-[2px] grid grid-cols-2 border border-black"
-          aria-label="Dodací a platební informace"
+          aria-label="Delivery and payment information"
         >
           <div
             class="border-r border-black p-2 text-[8px] leading-[1.35] flex flex-col justify-between h-full text-[#666]"
           >
             <div class="flex flex-col">
-              <div class="">Lokalita objednávky</div>
-              <div class="">Místo dodání</div>
+              <div class="">Order location</div>
+              <div class="">Delivery location</div>
             </div>
             <div class="flex flex-col">
               <div class="flex items-center gap-2">
-                <span class="w-22">Fakturu vystavil</span>
-                <strong class="text-black">Proměnné</strong>
+                <span class="w-22">Invoice issued by</span>
+                <strong class="text-black">Variable</strong>
               </div>
               <div class="flex items-center gap-2">
-                <span class="w-22">Text úhrady/poznámky</span>
-                <strong class="text-black">Proměnné</strong>
+                <span class="w-22">Payment text/notes</span>
+                <strong class="text-black">Variable</strong>
               </div>
             </div>
           </div>
@@ -171,66 +171,66 @@
           <div
             class="grid grid-cols-[1.45fr_0.75fr] gap-x-[10px] gap-y-[2px] p-2 text-[8px] leading-[1.3] text-[#666]"
           >
-            <div>Datum objednávky/zakázka</div>
-            <div class="font-bold text-black">Proměnné</div>
-            <div>DUZP / DUPL / DAT</div>
-            <div class="font-bold text-black">Proměnné</div>
-            <div>Způsob úhrady</div>
-            <div class="font-bold text-black">Proměnné</div>
-            <div>Datum splatnosti</div>
-            <div class="font-bold text-black">Proměnné</div>
-            <div>Datum platby termín</div>
-            <div class="font-bold text-black">Proměnné</div>
-            <div>Datum platby termín</div>
-            <div class="font-bold text-black">Proměnné</div>
+            <div>Order date/contract</div>
+            <div class="font-bold text-black">Variable</div>
+            <div>Tax date / DUPL / Date</div>
+            <div class="font-bold text-black">Variable</div>
+            <div>Payment method</div>
+            <div class="font-bold text-black">Variable</div>
+            <div>Due date</div>
+            <div class="font-bold text-black">Variable</div>
+            <div>Payment term date</div>
+            <div class="font-bold text-black">Variable</div>
+            <div>Payment term date</div>
+            <div class="font-bold text-black">Variable</div>
           </div>
         </section>
 
         <section
           class="mt-2 grid grid-cols-[62px_95px_70px_52px_48px_55px_45px_44px_1fr] items-end gap-x-[5px] text-[5px] leading-[1.1]"
-          aria-label="Projekt a položky hlavička"
+          aria-label="Project and items header"
         >
           <div>
-            <span class="mb-[2px] block text-[#666]">Projekt/výroba</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Project/production</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Jméno pracovníka</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Employee name</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">MJ zakázky</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Contract unit</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Cena</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Price</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Počet</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Quantity</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Měrná mj</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Unit</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Sazba</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Rate</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Celkem</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Total</span>
+            <strong>Variable</strong>
           </div>
           <div>
-            <span class="mb-[2px] block text-[#666]">Celkem s DPH</span>
-            <strong>Proměnné</strong>
+            <span class="mb-[2px] block text-[#666]">Total with VAT</span>
+            <strong>Variable</strong>
           </div>
         </section>
 
         <table
           class="my-4 w-full border-collapse text-[5px]"
-          aria-label="Položky faktury"
+          aria-label="Invoice items"
         >
           <colgroup>
             <col class="w-[5%]" />
@@ -248,47 +248,47 @@
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
               >
-                Poř.
+                No.
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-left font-bold whitespace-nowrap"
               >
-                Název položky
+                Item name
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
               >
-                Jedn.
+                Unit
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap"
               >
-                DPH
+                VAT
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
               >
-                Množství
+                Quantity
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
               >
-                J. cena
+                Unit price
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
               >
-                Celkem
+                Total
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
               >
-                Základ DPH
+                VAT base
               </th>
               <th
                 class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap"
               >
-                Celkem s DPH
+                Total with VAT
               </th>
             </tr>
           </thead>
@@ -297,108 +297,108 @@
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 1
               </td>
-              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Variable</td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 0 %
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
             </tr>
             <tr class="h-[10px]">
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 2
               </td>
-              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Variable</td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 0 %
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
             </tr>
             <tr class="h-[10px]">
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 3
               </td>
-              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Variable</td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 0 %
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
             </tr>
             <tr class="h-[10px]">
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 4
               </td>
-              <td class="border-b border-[#ececec] px-[2px] py-px">Proměnné</td>
+              <td class="border-b border-[#ececec] px-[2px] py-px">Variable</td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-center">
                 0 %
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
               <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                Proměnné
+                Variable
               </td>
             </tr>
           </tbody>
@@ -406,42 +406,42 @@
         <div class="flex-1"></div>
 
         <div class="flex flex-col border-2 border-black">
-          <h1 class="text-sm font-bold mb-2">Daňová rekapitulace celkem</h1>
+          <h1 class="text-sm font-bold mb-2">Tax recapitulation total</h1>
           <div
             class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-1 pr-10 mb-1"
           >
             <div class="flex justify-between">
-              <span>Sazba DPH</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT rate</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between"></div>
             <div class="flex justify-between">
-              <span>DPH %</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT %</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>Sazba DPH</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT rate</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>Základ daně</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>Tax base</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>DPH %</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT %</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>Sazba DPH</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT rate</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>Základ daně</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>Tax base</span>
+              <strong class="text-black">Variable</strong>
             </div>
             <div class="flex justify-between">
-              <span>DPH %</span>
-              <strong class="text-black">Proměnné</strong>
+              <span>VAT %</span>
+              <strong class="text-black">Variable</strong>
             </div>
           </div>
         </div>
@@ -449,20 +449,20 @@
           class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-[6px] pr-[42px]"
         >
           <div class="flex justify-between">
-            <span>Sazba DPH</span>
-            <strong class="text-black">Proměnné</strong>
+            <span>VAT rate</span>
+            <strong class="text-black">Variable</strong>
           </div>
           <div class="flex justify-between">
-            <span>Sazba DPH</span>
-            <strong class="text-black">Proměnné</strong>
+            <span>VAT rate</span>
+            <strong class="text-black">Variable</strong>
           </div>
           <div class="flex justify-between">
-            <span>DPH %</span>
-            <strong class="text-black">Proměnné</strong>
+            <span>VAT %</span>
+            <strong class="text-black">Variable</strong>
           </div>
           <div class="flex justify-between">
-            <span>Sazba DPH</span>
-            <strong class="text-black">Proměnné</strong>
+            <span>VAT rate</span>
+            <strong class="text-black">Variable</strong>
           </div>
         </div>
 
@@ -470,13 +470,13 @@
           class="mt-[3px] flex flex-col justify-between bg-[#EDEDED] p-1 pr-10 gap-2"
         >
           <div class="grid grid-cols-3 text-[8px] leading-[1.35] text-[#555]">
-            <div>Obchodní zást.</div>
-            <div class="text-center">Proměnné</div>
-            <div class="text-right">Zaúčtoval</div>
+            <div>Sales rep.</div>
+            <div class="text-center">Variable</div>
+            <div class="text-right">Accounted by</div>
           </div>
           <div class="flex justify-between">
-            <span class="text-[8px] font-bold">Celkem k úhradě</span>
-            <span class="text-[8px] font-bold">Proměnné</span>
+            <span class="text-[8px] font-bold">Total due</span>
+            <span class="text-[8px] font-bold">Variable</span>
           </div>
         </div>
       </div>
