@@ -1,0 +1,226 @@
+/* Schneider Invoice Print Template
+   Cleaned from Tailwind v4.2.2 compiled output.
+   All CSS variables resolved to concrete values. */
+
+/* === Page & Print Layout === */
+
+:root {
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --header-height: 40.0mm;
+  --footer-height: 0mm;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* === Minimal Base Reset (invoice-scoped) === */
+
+.print-format *:not(thead),
+.print-format *::before,
+.print-format *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.print-format h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.print-format b,
+.print-format strong {
+  font-weight: bolder;
+}
+
+.print-format img {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Root Container === */
+
+.print-format {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  line-height: 1.5;
+  position: relative;
+  width: 210mm;
+  background-color: #fff;
+}
+
+/* === Repeating Header (Chrome Headless) === */
+
+#print-footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-number {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #666;
+}
+
+/* === Spacing: Margin === */
+
+.m-0 { margin: 0; }
+.my-2 { margin-block: 0.5rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-\[3px\] { margin-top: 3px; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-\[2px\] { margin-bottom: 2px; }
+.mb-\[7px\] { margin-bottom: 7px; }
+
+/* === Display & Box === */
+
+.box-border { box-sizing: border-box; }
+.block { display: block; }
+.flex { display: flex; }
+.grid { display: grid; }
+
+/* === Sizing === */
+
+.h-\[10px\] { height: 10px; }
+.h-auto { height: auto; }
+.h-full { height: 100%; }
+.min-h-\[297mm\] { min-height: 297mm; }
+.w-36 { width: 9rem; }
+.w-48 { width: 12rem; }
+.w-72 { width: 18rem; }
+.w-\[210mm\] { width: 210mm; }
+.w-full { width: 100%; }
+
+/* === Flexbox === */
+
+.flex-1 { flex: 1; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+
+/* === Grid === */
+
+.border-collapse { border-collapse: collapse; }
+.grid-flow-col { grid-auto-flow: column; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-\[1\.45fr_0\.75fr\] { grid-template-columns: 1.45fr 0.75fr; }
+.grid-cols-\[3fr_1fr\] { grid-template-columns: 3fr 1fr; }
+
+/* === Gap === */
+
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-x-10 { column-gap: 2.5rem; }
+.gap-x-\[5px\] { column-gap: 5px; }
+.gap-x-\[10px\] { column-gap: 10px; }
+.gap-y-\[2px\] { row-gap: 2px; }
+
+/* === Border === */
+
+.border { border-style: solid; border-width: 1px; }
+.border-2 { border-style: solid; border-width: 2px; }
+.border-t { border-top-style: solid; border-top-width: 1px; }
+.border-r { border-right-style: solid; border-right-width: 1px; }
+.border-b { border-bottom-style: solid; border-bottom-width: 1px; }
+.border-b-2 { border-bottom-style: solid; border-bottom-width: 2px; }
+.border-\[\#cfcfcf\] { border-color: #cfcfcf; }
+.border-\[\#ddd\] { border-color: #ddd; }
+.border-\[\#ececec\] { border-color: #ececec; }
+.border-black { border-color: #000; }
+
+/* === Background === */
+
+.bg-\[\#EDEDED\] { background-color: #ededed; }
+.bg-\[\#ececec\] { background-color: #ececec; }
+.bg-\[\#ededed\] { background-color: #ededed; }
+.bg-white { background-color: #fff; }
+
+/* === Padding === */
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.px-2 { padding-inline: 0.5rem; }
+.px-6 { padding-inline: 1.5rem; }
+.px-\[2px\] { padding-inline: 2px; }
+.py-1 { padding-block: 0.25rem; }
+.py-\[2px\] { padding-block: 2px; }
+.py-px { padding-block: 1px; }
+.pt-\[22px\] { padding-top: 22px; }
+.pr-10 { padding-right: 2.5rem; }
+.pr-\[42px\] { padding-right: 42px; }
+.pb-\[18px\] { padding-bottom: 18px; }
+.pl-1 { padding-left: 0.25rem; }
+.pl-\[6px\] { padding-left: 6px; }
+
+/* === Text Alignment === */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* === Typography === */
+
+.font-\[Arial\2c Helvetica\2c sans-serif\] { font-family: Arial, Helvetica, sans-serif; }
+.text-2xl { font-size: 1.5rem; line-height: 1.3333; }
+.text-lg { font-size: 1.125rem; line-height: 1.5556; }
+.text-sm { font-size: 0.875rem; line-height: 1.4286; }
+.text-\[13px\] { font-size: 13px; }
+.text-\[28px\] { font-size: 28px; }
+.leading-\[1\.1\] { line-height: 1.1; }
+.leading-\[1\.3\] { line-height: 1.3; }
+.leading-\[1\.35\] { line-height: 1.35; }
+.leading-\[1\.45\] { line-height: 1.45; }
+.leading-tight { line-height: 1.25; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.tracking-\[-0\.15px\] { letter-spacing: -0.15px; }
+.tracking-\[0\.1px\] { letter-spacing: 0.1px; }
+.whitespace-nowrap { white-space: nowrap; }
+
+/* === Text Color === */
+
+.text-\[\#444\] { color: #444; }
+.text-\[\#555\] { color: #555; }
+.text-\[\#666\] { color: #666; }
+.text-black { color: #000; }
+.text-gray-500 { color: #6b7280; }
+
+/* === Misc === */
+
+.uppercase { text-transform: uppercase; }
+
+/* === Print Overrides === */
+
+@media print {
+  .print\:h-\[297mm\] { height: 297mm; }
+  .print\:border-0 { border-style: solid; border-width: 0; }
+  .print\:bg-white { background-color: #fff; }
+  .print\:p-0 { padding: 0; }
+
+  .print-head {
+    display: table-header-group !important;
+  }
+
+  tbody > tr {
+    page-break-inside: avoid;
+  }
+}
