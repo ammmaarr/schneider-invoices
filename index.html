@@ -397,8 +397,7 @@
 <script>
 window.onload = function () {
   var pageHeightPx = 1122.51;
-  // Frappe page chrome offset: set to 0 for standalone, ~169 inside Frappe
-  var frappeOffset = 0;
+  var frappeOffset = (typeof frappe !== 'undefined') ? 169 : 0;
 
   var headerEl = document.querySelector('.print-head');
   var bodyEl = document.querySelector('.print-body');
@@ -429,14 +428,13 @@ window.onload = function () {
     var anchorRect = anchor.getBoundingClientRect();
     var formatRect = printFormatDiv.getBoundingClientRect();
     var anchorTop = anchorRect.top - formatRect.top;
-    var anchorRight = formatRect.right - anchorRect.right;
 
     for (var i = 0; i < numberOfPages; i++) {
       var span = document.createElement('span');
       span.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
       span.style.position = 'absolute';
       span.style.top = (i * pageHeightPx) + anchorTop + 'px';
-      span.style.right = anchorRight + 'px';
+      span.style.right = '1.5rem';
       span.style.fontSize = '0.875rem';
       span.style.lineHeight = '1.4286';
       span.style.color = '#6b7280';
