@@ -19,20 +19,18 @@
           alt="CONSTRUCTION SCHNEIDER"
         />
 
-        <div class="flex items-end justify-between">
+        <div class="flex justify-between">
           <div class="flex flex-col">
-            <h1 class="m-0 mb-[7px] text-xl font-extrabold tracking-[-0.15px]">
+            <h1 class="m-0 mb-[7px] text-2xl font-extrabold tracking-[-0.15px]">
               TAX DOCUMENT (INVOICE)
             </h1>
-            <div class="text-sm font-bold leading-tight">
-              VARIABLE SYMBOL:
-            </div>
-            <div class="text-sm font-bold leading-tight">
+            <div class="text-lg font-bold leading-tight">VARIABLE SYMBOL:</div>
+            <div class="text-lg font-bold leading-tight">
               EVIDENCE NUMBER OF TAX DOCUMENT:
             </div>
           </div>
           <div
-            class="text-right flex flex-col gap-2 text-[12px] leading-tight text-gray-500"
+            class="text-right flex flex-col gap-2 text-sm leading-tight text-gray-500"
           >
             <p>Page no.: variable</p>
             <p>
@@ -51,23 +49,39 @@
         >
           <div>
             <div
-              class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
+              class="border-b border-[#cfcfcf] bg-[#ededed] px-2 py-[2px] text-sm font-bold uppercase"
             >
               Supplier
             </div>
-            <div
-              class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
-            >
-              <div class="mb-[2px] text-[6px] font-bold">
+            <div class="px-2 py-1 text-sm leading-[1.35] border border-black">
+              <div class="mb-[2px] text-sm font-bold">
                 SCHNEIDER construction s.r.o.
               </div>
-              <div>Co. ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Variable</div>
-              <div>VAT No. &nbsp;&nbsp;&nbsp; CZ279299</div>
-              <div>Příkopská 905/5</div>
-              <div>747 23 Štáblovice</div>
-              <div class="text-[#666]">fax</div>
-              <div>e-mail: info@schneiderconstruction.cz</div>
-              <div>tel.: 332 661 490</div>
+              <div class="grid grid-cols-2 items-center justify-between w-36">
+                <span> Co. ID </span>
+                <strong class="text-black">Variable</strong>
+              </div>
+              <div class="grid grid-cols-2 items-center justify-between w-36">
+                <span> VAT No. </span>
+                <strong class="text-black">CZ279299</strong>
+              </div>
+              <div class="flex flex-col text-black">
+                <strong>Příkopská 905/5</strong>
+                <strong>747 23 Štáblovice</strong>
+              </div>
+              <div>
+                <span> email: </span>
+                <strong class="text-black"
+                  >info@schneiderconstruction.cz</strong
+                >
+              </div>
+              <strong class="text-black">tel.: 332 661 490</strong>
+              <div class="text-[#666]">
+                <span>fax: </span><strong class="text-black">variable</strong>
+              </div>
+              <div class="text-[#666]">
+                <span>http: </span><strong class="text-black">variable</strong>
+              </div>
               <div class="text-[#666]">
                 registered: commercial register KS Ostrava
               </div>
@@ -75,19 +89,19 @@
             </div>
           </div>
 
-          <div>
+          <div class="h-full flex flex-col justify-between">
             <div
-              class="h-3 border-b border-[#cfcfcf] bg-[#ededed] px-[5px] pt-[2px] text-[5px] font-bold uppercase"
+              class="border-b border-[#cfcfcf] bg-[#ededed] px-2 py-[2px] text-sm font-bold uppercase"
             >
               Customer
             </div>
             <div
-              class="h-[94px] px-[7px] py-[5px] text-[5px] leading-[1.35] border border-black"
+              class="px-2 py-1 text-lg leading-[1.35] border border-black h-full"
             >
-              <div class="text-[6px] font-bold leading-[1.45]">
+              <div class="font-bold leading-[1.45]">
                 Customer name: variable
               </div>
-              <div class="text-[6px] font-bold leading-[1.45]">
+              <div class="font-bold leading-[1.45]">
                 Customer address (variable):
               </div>
             </div>
@@ -95,43 +109,41 @@
         </section>
 
         <section
-          class="mt-[2px] grid grid-cols-[3fr_1fr] gap-2"
+          class="grid grid-cols-[3fr_1fr] gap-2 mt-1"
           aria-label="Payment details"
         >
           <div class="border border-black">
             <div
-              class="min-h-[70px] border-b-2 border-[#cfcfcf] bg-[#ececec] p-2"
+              class="border-b-2 border-[#cfcfcf] bg-[#ececec] p-2 flex flex-col gap-1"
             >
-              <div class="flex items-baseline gap-2">
-                <span class="min-w-[72px] text-xs text-[#444]">Account number</span>
+              <div class="grid grid-cols-2 w-72">
+                <span class="text-[13px] text-[#444]">Account number</span>
                 <span class="text-sm font-extrabold tracking-[0.1px]"
                   >35-8095640217 / 0100</span
                 >
               </div>
-              <div class="flex items-baseline gap-2">
-                <span class="min-w-[72px] text-xs text-[#444]">IBAN</span>
+              <div class="grid grid-cols-2 w-72">
+                <span class="text-[13px] text-[#444]">IBAN</span>
                 <span class="text-sm font-extrabold tracking-[0.1px]"
                   >CZ2501000000358095640217</span
                 >
               </div>
-              <div
-                class="grid grid-cols-[68px_110px_1fr] items-end gap-x-3 gap-y-px"
-              >
-                <div class="text-xs text-[#444]">Bank number</div>
-                <div class="text-xs text-[#444]">SWIFT</div>
-                <div class="text-xs text-[#444]">Bank name</div>
+              <div class="grid grid-cols-3">
+                <div class="text-[13px] text-[#444]">Bank number</div>
+                <div class="text-[13px] text-[#444]">SWIFT</div>
+                <div class="text-[13px] text-[#444]">Bank name</div>
                 <div class="text-sm font-bold">0100</div>
                 <div class="text-sm font-bold">KOMBCZPP</div>
                 <div class="text-sm font-bold">KB Crown Account</div>
               </div>
             </div>
 
-            <div class="p-2 text-xs">
-              <div class="mb-[2px] flex gap-10">
-                <span class="w-3 text-[#444]">Co. ID</span><strong>Variable</strong>
+            <div class="p-2 text-[13px]">
+              <div class="mb-[2px] grid grid-cols-2 w-72">
+                <span class="text-[#444]">Co. ID</span><strong>Variable</strong>
               </div>
-              <div class="mb-[2px] flex gap-10">
-                <span class="w-3 text-[#444]">VAT No.</span
+              <div class="mb-[2px] grid grid-cols-2 w-72">
+                <span class="text-[#444]">VAT No.</span
                 ><strong>Variable</strong>
               </div>
             </div>
@@ -146,30 +158,30 @@
         </section>
 
         <section
-          class="mt-[2px] grid grid-cols-2 border border-black"
+          class="mt-1 grid grid-cols-2 border border-black"
           aria-label="Delivery and payment information"
         >
           <div
-            class="border-r border-black p-2 text-[8px] leading-[1.35] flex flex-col justify-between h-full text-[#666]"
+            class="border-r border-black p-2 text-sm leading-[1.35] flex flex-col justify-between h-full text-[#666]"
           >
             <div class="flex flex-col">
               <div class="">Order location</div>
               <div class="">Delivery location</div>
             </div>
             <div class="flex flex-col">
-              <div class="flex items-center gap-2">
-                <span class="w-22">Invoice issued by</span>
+              <div class="grid grid-cols-2 w-72">
+                <span>Invoice issued by</span>
                 <strong class="text-black">Variable</strong>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="w-22">Payment text/notes</span>
+              <div class="grid grid-cols-2 w-72">
+                <span>Payment text/notes</span>
                 <strong class="text-black">Variable</strong>
               </div>
             </div>
           </div>
 
           <div
-            class="grid grid-cols-[1.45fr_0.75fr] gap-x-[10px] gap-y-[2px] p-2 text-[8px] leading-[1.3] text-[#666]"
+            class="grid grid-cols-[1.45fr_0.75fr] gap-x-[10px] gap-y-[2px] p-2 text-sm leading-[1.3] text-[#666]"
           >
             <div>Order date/contract</div>
             <div class="font-bold text-black">Variable</div>
@@ -186,14 +198,14 @@
           </div>
         </section>
 
+        <div class="text-[13px] my-2">
+          <span class="text-black">Project/production</span>
+          <strong>Variable</strong>
+        </div>
         <section
-          class="mt-2 grid grid-cols-[62px_95px_70px_52px_48px_55px_45px_44px_1fr] items-end gap-x-[5px] text-[5px] leading-[1.1]"
+          class="grid grid-flow-col items-end gap-x-[5px] text-[13px] leading-[1.1]"
           aria-label="Project and items header"
         >
-          <div>
-            <span class="mb-[2px] block text-[#666]">Project/production</span>
-            <strong>Variable</strong>
-          </div>
           <div>
             <span class="mb-[2px] block text-[#666]">Employee name</span>
             <strong>Variable</strong>
@@ -229,19 +241,19 @@
         </section>
 
         <table
-          class="my-4 w-full border-collapse text-[5px]"
+          class="my-2 w-full border-collapse text-sm"
           aria-label="Invoice items"
         >
           <colgroup>
-            <col class="w-[5%]" />
-            <col class="w-[23%]" />
-            <col class="w-[9%]" />
-            <col class="w-[7%]" />
-            <col class="w-[9%]" />
-            <col class="w-[10%]" />
-            <col class="w-[9%]" />
-            <col class="w-[13%]" />
-            <col class="w-[15%]" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
           </colgroup>
           <thead>
             <tr>
@@ -406,9 +418,9 @@
         <div class="flex-1"></div>
 
         <div class="flex flex-col border-2 border-black">
-          <h1 class="text-sm font-bold mb-2">Tax recapitulation total</h1>
+          <h1 class="text-sm font-bold">Tax recapitulation total</h1>
           <div
-            class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-1 pr-10 mb-1"
+            class="grid grid-cols-3 gap-x-10 text-[#666] text-sm pl-1 pr-10 mb-1"
           >
             <div class="flex justify-between">
               <span>VAT rate</span>
@@ -446,7 +458,7 @@
           </div>
         </div>
         <div
-          class="grid grid-cols-3 gap-x-10 text-[#666] text-[8px] pl-[6px] pr-[42px]"
+          class="grid grid-cols-3 gap-x-10 text-[#666] text-sm pl-[6px] pr-[42px]"
         >
           <div class="flex justify-between">
             <span>VAT rate</span>
@@ -467,16 +479,16 @@
         </div>
 
         <div
-          class="mt-[3px] flex flex-col justify-between bg-[#EDEDED] p-1 pr-10 gap-2"
+          class="mt-[3px] flex flex-col justify-between bg-[#EDEDED] p-1 pr-10 gap-1"
         >
-          <div class="grid grid-cols-3 text-[8px] leading-[1.35] text-[#555]">
+          <div class="grid grid-cols-3 text-sm leading-[1.35] text-[#555]">
             <div>Sales rep.</div>
             <div class="text-center">Variable</div>
             <div class="text-right">Accounted by</div>
           </div>
           <div class="flex justify-between">
-            <span class="text-[8px] font-bold">Total due</span>
-            <span class="text-[8px] font-bold">Variable</span>
+            <span class="text-sm font-bold">Total due</span>
+            <span class="text-sm font-bold">Variable</span>
           </div>
         </div>
       </div>
