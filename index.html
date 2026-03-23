@@ -396,50 +396,52 @@
 
 <script>
 window.onload = function () {
-  var pageHeightPx = 1122.51;
-  var frappeOffset = (typeof frappe !== 'undefined') ? 169 : 0;
-
   var headerEl = document.querySelector('.print-head');
   var bodyEl = document.querySelector('.print-body');
   var printFormatDiv = document.querySelector('.print-format');
+  var anchor = document.getElementById('page-number-anchor');
 
-  if (!headerEl || !bodyEl || !printFormatDiv) return;
+  if (!headerEl || !bodyEl || !printFormatDiv || !anchor) return;
 
+  // Dynamically measure page height from mm to px (works at any DPI/scale)
+  var ruler = document.createElement('div');
+  ruler.style.cssText = 'position:absolute;visibility:hidden;height:297mm;';
+  printFormatDiv.appendChild(ruler);
+  var fullPagePx = ruler.getBoundingClientRect().height;
+  ruler.style.height = '5mm';
+  var topMarginPx = ruler.getBoundingClientRect().height;
+  printFormatDiv.removeChild(ruler);
+
+  var effectivePageHeight = fullPagePx - topMarginPx;
   var headerHeight = headerEl.getBoundingClientRect().height;
-  var contentHeightPerPage = pageHeightPx - headerHeight - frappeOffset;
+  var contentHeightPerPage = effectivePageHeight - headerHeight;
   var totalContentHeight = bodyEl.getBoundingClientRect().height;
 
   var numberOfPages = Math.max(1, Math.ceil(totalContentHeight / contentHeightPerPage));
 
-  // Compensate for repeating theads on subsequent pages
   if (numberOfPages > 1) {
     var theads = document.querySelectorAll('.print-format table thead');
     var totalTheadHeight = 0;
     theads.forEach(function (thead) {
       totalTheadHeight += thead.getBoundingClientRect().height;
     });
-
     var adjustedHeight = totalContentHeight + totalTheadHeight * (numberOfPages - 1);
     numberOfPages = Math.max(1, Math.ceil(adjustedHeight / contentHeightPerPage));
   }
 
-  var anchor = document.getElementById('page-number-anchor');
-  if (anchor) {
-    var anchorRect = anchor.getBoundingClientRect();
-    var formatRect = printFormatDiv.getBoundingClientRect();
-    var anchorTop = anchorRect.top - formatRect.top;
+  // Anchor position relative to the thead (stable across screen/print layouts)
+  var anchorInHeader = anchor.getBoundingClientRect().top - headerEl.getBoundingClientRect().top;
 
-    for (var i = 0; i < numberOfPages; i++) {
-      var span = document.createElement('span');
-      span.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
-      span.style.position = 'absolute';
-      span.style.top = (i * pageHeightPx) + anchorTop + 'px';
-      span.style.right = '1.5rem';
-      span.style.fontSize = '0.875rem';
-      span.style.lineHeight = '1.4286';
-      span.style.color = '#6b7280';
-      printFormatDiv.appendChild(span);
-    }
+  for (var i = 0; i < numberOfPages; i++) {
+    var span = document.createElement('span');
+    span.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
+    span.style.position = 'absolute';
+    span.style.top = (i * effectivePageHeight) + anchorInHeader + 'px';
+    span.style.right = '1.5rem';
+    span.style.fontSize = '0.875rem';
+    span.style.lineHeight = '1.4286';
+    span.style.color = '#6b7280';
+    printFormatDiv.appendChild(span);
   }
 };
 </script>
