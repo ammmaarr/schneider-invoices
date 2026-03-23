@@ -29,7 +29,15 @@
 .print-format *::before,
 .print-format *::after {
   box-sizing: border-box;
+}
+
+.print-format h1,
+.print-format p {
   margin: 0;
+}
+
+.print-format td,
+.print-format th {
   padding: 0;
 }
 
