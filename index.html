@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="text-right flex flex-col gap-2 text-sm leading-tight text-gray-500">
-              <p class="page-number-slot"></p>
+              <p><span id="page-number-anchor" style="visibility: hidden;">Page 0 of 0</span></p>
               <p>
                 {{ your_order }}
                 <br />
@@ -424,12 +424,24 @@ window.onload = function () {
     numberOfPages = Math.max(1, Math.ceil(adjustedHeight / contentHeightPerPage));
   }
 
-  for (var i = 0; i < numberOfPages; i++) {
-    var pageNumberDiv = document.createElement('div');
-    pageNumberDiv.classList.add('page-number');
-    pageNumberDiv.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
-    pageNumberDiv.style.top = (i * pageHeightPx) + 4 + 'px';
-    printFormatDiv.appendChild(pageNumberDiv);
+  var anchor = document.getElementById('page-number-anchor');
+  if (anchor) {
+    var anchorRect = anchor.getBoundingClientRect();
+    var formatRect = printFormatDiv.getBoundingClientRect();
+    var anchorTop = anchorRect.top - formatRect.top;
+    var anchorRight = formatRect.right - anchorRect.right;
+
+    for (var i = 0; i < numberOfPages; i++) {
+      var span = document.createElement('span');
+      span.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
+      span.style.position = 'absolute';
+      span.style.top = (i * pageHeightPx) + anchorTop + 'px';
+      span.style.right = anchorRight + 'px';
+      span.style.fontSize = '0.875rem';
+      span.style.lineHeight = '1.4286';
+      span.style.color = '#6b7280';
+      printFormatDiv.appendChild(span);
+    }
   }
 };
 </script>

@@ -13,7 +13,7 @@
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 5mm 5mm 0 5mm;
 }
 
 @media print {
@@ -76,12 +76,6 @@
   box-sizing: border-box;
 }
 
-.page-number {
-  position: absolute;
-  right: 10px;
-  font-size: 10px;
-  color: #666;
-}
 
 /* === Spacing: Margin === */
 
