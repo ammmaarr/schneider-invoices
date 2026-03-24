@@ -1,447 +1,187 @@
-<link rel="stylesheet" href="schneider_invoice.css">
-
-<div class="print-format" id="print-content">
-  <table style="min-height: var(--page-height); width: var(--page-width); border-collapse: separate; border-spacing: 0;">
-    <thead class="print-head">
-      <tr>
-        <td class="px-6 pt-[22px]">
-          <img
-            class="h-auto w-48 mb-4"
-            src="{{ company_logo }}"
-            alt="CONSTRUCTION SCHNEIDER"
-          />
-
-          <div class="flex justify-between">
-            <div class="flex flex-col">
-              <h1 class="m-0 mb-[7px] text-2xl font-extrabold tracking-[-0.15px]">
-                TAX DOCUMENT (INVOICE)
-              </h1>
-              <div class="text-lg font-bold leading-tight">
-                VARIABLE SYMBOL: {{ variable_symbol }}
-              </div>
-              <div class="text-lg font-bold leading-tight">
-                EVIDENCE NUMBER OF TAX DOCUMENT: {{ evidence_number }}
-              </div>
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>SCHNEIDER – Cenová nabídka</title>
+  </head>
+  <body
+    class="m-0 flex min-h-screen items-start justify-center overflow-x-auto bg-[#a4a4a4] p-7 font-montserrat text-black max-[760px]:p-4 print:bg-white print:p-0"
+  >
+    <div
+      class="box-border flex min-h-[297mm] w-[210mm] flex-col bg-white border border-[#ddd] shadow-[0_6px_20px_rgba(0,0,0,0.2)] print:min-h-[297mm] print:border-0 print:shadow-none"
+    >
+      <!-- Page Content -->
+      <div class="flex flex-1 flex-col px-[30px] pt-[14px]">
+        <!-- NABÍDKA + Date/Number row -->
+        <div
+          class="flex items-end justify-between pb-2 mb-2 border-b border-[#686868]"
+        >
+          <div class="flex items-baseline gap-5 pt-2 text-sm">
+            <span class="font-bold text-[#686868]">NABÍDKA:</span>
+            <span class="font-bold">Proměnné</span>
+          </div>
+          <div class="text-[8px] flex flex-col gap-2 text-[#686868]">
+            <div class="grid grid-cols-2 gap-10">
+              <span>Číslo nabídky:</span>
+              <span class="font-bold">Proměnné</span>
             </div>
-            <div class="text-right flex flex-col gap-2 text-sm leading-tight text-gray-500">
-              <p><span id="page-number-anchor" style="visibility: hidden;">Page 0 of 0</span></p>
-              <p>
-                {{ your_order }}
-                <br />
-                {{ multiple_orders }}
-                <br />
-                {{ delivery_note }}
-              </p>
+            <div class="grid grid-cols-2 gap-10">
+              <span class="font-bold text-[#686868]">VYTVOŘENO:</span>
+              <span class="font-bold">Proměnné</span>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+              <span class="font-bold text-[#686868]">PLATNOST:</span>
+              <span class="font-bold">Proměnné</span>
             </div>
           </div>
-        </td>
-      </tr>
-    </thead>
+        </div>
 
-    <tbody class="print-body">
-      <tr>
-        <td class="px-6">
-          <section
-            class="mt-4 w-full grid grid-cols-2 gap-2"
-            aria-label="Supplier and customer"
+        <!-- Company Info + Contact -->
+        <section
+          class="grid grid-cols-2 gap-[24px] mb-[14px] border-b border-[#D1D1D1] pb-6"
+        >
+          <!-- Left: Company details -->
+          <div class="text-xs leading-[1.7] text-[#6B6B6B] pt-2">
+            <div class="font-bold">SCHNEIDER construction s.r.o.</div>
+            <div class="text-black font-bold">Průmyslová 93/5</div>
+            <div class="text-black font-bold">747 23 Bolatice</div>
+            <div>http: www.schneider-construction.cz</div>
+            <div>e-mail:</div>
+            <div>rozpocty@hlinikovesystemy.cz</div>
+            <div>tel:</div>
+          </div>
+
+          <!-- Right: POPTÁVAJÍCÍ: -->
+          <div>
+            <div class="py-1 text-[8px] font-bold uppercase">POPTÁVAJÍCÍ:</div>
+            <div
+              class="border border-[#6b6b6b] pb-10 p-2 text-xs flex flex-col gap-1"
+            >
+              <div class="font-bold text-[#6b6b6b]">Jméno proměnné</div>
+              <div class="font-bold">Firma proměnné</div>
+              <div class="font-bold">Adresa proměnné</div>
+              <div class="font-bold">IČO proměnné</div>
+              <div class="font-bold">Adresa firmy proměnné</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quote description -->
+        <div class="border-b-2 border-[#686868] pb-[6px] mb-[14px]">
+          <span class="text-xs">Cenová nabídka na: </span>
+          <span class="text-xs">proměnné</span>
+        </div>
+
+        <!-- Items Table -->
+        <table class="w-full border-collapse text-xs mb-[6px]" style="table-layout: fixed;">
+          <colgroup>
+            <col style="width: 45%">
+            <col style="width: 13%">
+            <col style="width: 20%">
+            <col style="width: 22%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="px-2 py-2 text-left font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">description</th>
+              <th class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">qty + UOM</th>
+              <th class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">Unit price</th>
+              <th class="px-2 py-2 text-right font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Item 1 -->
+            <tr class="border-b border-[#e8e0d0]">
+              <td class="px-2 py-2 font-bold text-left">Al zábradlí RAILOG 60 - 1000+2100+1000x1100mm</td>
+              <td class="px-2 py-2 text-center whitespace-nowrap"><span class="font-bold">14,00</span>&nbsp; ks</td>
+              <td class="px-2 py-2 text-center">28 255,00</td>
+              <td class="px-2 py-2 text-right font-bold">395 570,00</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="px-2 pt-3 pb-4 text-[11px] text-[#333] leading-relaxed">
+                <div class="font-bold mb-1">NOTE</div>
+                <div class="pl-2">- 1000+2100+1000x1100mm</div>
+                <div class="pl-2">- členění 1D+2D+1D</div>
+                <div class="pl-2">- pú ELOX stříbrná</div>
+              </td>
+            </tr>
+
+            <!-- Item 2 -->
+            <tr class="border-b border-[#e8e0d0]">
+              <td class="px-2 py-2 font-bold text-left">Al zábradlí RAILOG 60 - 1885x1100mm</td>
+              <td class="px-2 py-2 text-center whitespace-nowrap"><span class="font-bold">24,00</span>&nbsp; ks</td>
+              <td class="px-2 py-2 text-center">15 655,00</td>
+              <td class="px-2 py-2 text-right font-bold">375 720,00</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="px-2 pt-3 pb-4 text-[11px] text-[#333] leading-relaxed">
+                <div class="pl-2">- 1885x1100mm</div>
+                <div class="pl-2">- členění 1D</div>
+                <div class="pl-2">- pú ELOX stříbrná</div>
+                <div class="pl-2">- výplň bezp. sklo mléčné</div>
+                <div class="pl-2">- včetně montáže a dopravy</div>
+              </td>
+            </tr>
+
+            <!-- Item 3 -->
+            <tr class="border-b border-[#e8e0d0]">
+              <td class="px-2 py-2 font-bold text-left">Al zábradlí RAILOG 80 - 3290-3370x1100mm</td>
+              <td class="px-2 py-2 text-center whitespace-nowrap"><span class="font-bold">56,00</span>&nbsp; ks</td>
+              <td class="px-2 py-2 text-center">24 555,00</td>
+              <td class="px-2 py-2 text-right font-bold">1 375 080,00</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="px-2 pt-3 pb-4 text-[11px] text-[#333] leading-relaxed">
+                <div class="pl-2">- 3290-3370x1100mm</div>
+                <div class="pl-2">- členění 2D</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="flex-1"></div>
+        <!-- Totals -->
+        <div class="flex justify-end mb-[14px]">
+          <div
+            class="w-full bg-[#D1D1D1] text-black border border-black text-xs grid grid-cols-[1fr_2fr]"
           >
-            <div>
-              <div class="border-b border-[#cfcfcf] bg-[#ededed] px-2 py-[2px] text-sm font-bold uppercase">
-                Supplier
+            <div></div>
+            <div
+              class="items-center justify-between p-2 grid grid-cols-2 gap-y-2"
+            >
+              <span class="font-bold">Celková cena bez DPH v</span>
+              <div class="grid grid-cols-2 w-full">
+                <span class="font-bold">CZK</span>
+                <span class="font-bold text-right">Proměnné</span>
               </div>
-              <div class="px-2 py-1 text-sm leading-[1.35] border border-black">
-                <div class="mb-[2px] text-sm font-bold">
-                  SCHNEIDER construction s.r.o.
-                </div>
-                <div class="grid grid-cols-2 items-center justify-between w-36">
-                  <span>Co. ID</span>
-                  <strong class="text-black">{{ supplier_company_id }}</strong>
-                </div>
-                <div class="grid grid-cols-2 items-center justify-between w-36">
-                  <span>VAT No.</span>
-                  <strong class="text-black">CZ279299</strong>
-                </div>
-                <div class="flex flex-col text-black">
-                  <strong>Příkopská 905/5</strong>
-                  <strong>747 23 Štáblovice</strong>
-                </div>
-                <div>
-                  <span>email: </span>
-                  <strong class="text-black">info@schneiderconstruction.cz</strong>
-                </div>
-                <strong class="text-black">tel.: 332 661 490</strong>
-                <div class="text-[#666]">
-                  <span>fax: </span><strong class="text-black">{{ supplier_fax }}</strong>
-                </div>
-                <div class="text-[#666]">
-                  <span>http: </span><strong class="text-black">{{ supplier_http }}</strong>
-                </div>
-                <div class="text-[#666]">
-                  registered: commercial register KS Ostrava
-                </div>
-                <div class="text-[#666]">VAT payer since April 4, 2008</div>
-              </div>
-            </div>
-
-            <div class="h-full flex flex-col justify-between">
-              <div class="border-b border-[#cfcfcf] bg-[#ededed] px-2 py-[2px] text-sm font-bold uppercase">
-                Customer
-              </div>
-              <div class="px-2 py-1 text-lg leading-[1.35] border border-black h-full">
-                <div class="font-bold leading-[1.45]">
-                  {{ customer_name }}
-                </div>
-                <div class="font-bold leading-[1.45]">
-                  {{ customer_address }}
-                </div>
-              </div>
-            </div>
-          </section>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="px-6">
-          <section
-            class="grid grid-cols-[3fr_1fr] gap-2 mt-1"
-            aria-label="Payment details"
-          >
-            <div class="border border-black">
-              <div class="border-b-2 border-[#cfcfcf] bg-[#ececec] p-2 flex flex-col gap-1">
-                <div class="grid grid-cols-2 w-72">
-                  <span class="text-[13px] text-[#444]">Account number</span>
-                  <span class="text-sm font-extrabold tracking-[0.1px]">35-8095640217 / 0100</span>
-                </div>
-                <div class="grid grid-cols-2 w-72">
-                  <span class="text-[13px] text-[#444]">IBAN</span>
-                  <span class="text-sm font-extrabold tracking-[0.1px]">CZ2501000000358095640217</span>
-                </div>
-                <div class="grid grid-cols-3">
-                  <div class="text-[13px] text-[#444]">Bank number</div>
-                  <div class="text-[13px] text-[#444]">SWIFT</div>
-                  <div class="text-[13px] text-[#444]">Bank name</div>
-                  <div class="text-sm font-bold">0100</div>
-                  <div class="text-sm font-bold">KOMBCZPP</div>
-                  <div class="text-sm font-bold">KB Crown Account</div>
-                </div>
-              </div>
-
-              <div class="p-2 text-[13px]">
-                <div class="mb-[2px] grid grid-cols-2 w-72">
-                  <span class="text-[#444]">Co. ID</span>
-                  <strong>{{ customer_company_id }}</strong>
-                </div>
-                <div class="mb-[2px] grid grid-cols-2 w-72">
-                  <span class="text-[#444]">VAT No.</span>
-                  <strong>{{ customer_vat_no }}</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-center border border-black" aria-label="QR code">
-              <img
-                src="{{ qr_code }}"
-                alt="Payment QR"
-                style="max-width: 100%; max-height: 100%; object-fit: contain;"
-              />
-            </div>
-          </section>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="px-6">
-          <section
-            class="mt-1 grid grid-cols-2 border border-black"
-            aria-label="Delivery and payment information"
-          >
-            <div class="border-r border-black p-2 text-sm leading-[1.35] flex flex-col justify-between h-full text-[#666]">
-              <div class="flex flex-col">
-                <div>Order location</div>
-                <div>Delivery location</div>
-              </div>
-              <div class="flex flex-col">
-                <div class="grid grid-cols-2 w-72">
-                  <span>Invoice issued by</span>
-                  <strong class="text-black">{{ issued_by }}</strong>
-                </div>
-                <div class="grid grid-cols-2 w-72">
-                  <span>Payment text/notes</span>
-                  <strong class="text-black">{{ payment_notes }}</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-[1.45fr_0.75fr] gap-x-[10px] gap-y-[2px] p-2 text-sm leading-[1.3] text-[#666]">
-              <div>Order date/contract</div>
-              <div class="font-bold text-black">{{ order_date }}</div>
-              <div>Tax date / DUPL / Date</div>
-              <div class="font-bold text-black">{{ tax_date }}</div>
-              <div>Payment method</div>
-              <div class="font-bold text-black">{{ payment_method }}</div>
-              <div>Due date</div>
-              <div class="font-bold text-black">{{ due_date }}</div>
-              <div>Payment term date</div>
-              <div class="font-bold text-black">{{ payment_term_1 }}</div>
-              <div>Payment term date</div>
-              <div class="font-bold text-black">{{ payment_term_2 }}</div>
-            </div>
-          </section>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="px-6">
-          <div class="text-[13px] my-2">
-            <span class="text-black">Project/production</span>
-            <strong>{{ project_name }}</strong>
-          </div>
-
-          <section
-            class="grid grid-flow-col items-end gap-x-[5px] text-[13px] leading-[1.1]"
-            aria-label="Project and items header"
-          >
-            <div>
-              <span class="mb-[2px] block text-[#666]">Employee name</span>
-              <strong>{{ employee_name }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Contract unit</span>
-              <strong>{{ contract_unit }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Price</span>
-              <strong>{{ price }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Quantity</span>
-              <strong>{{ quantity }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Unit</span>
-              <strong>{{ unit }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Rate</span>
-              <strong>{{ rate }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Total</span>
-              <strong>{{ header_total }}</strong>
-            </div>
-            <div>
-              <span class="mb-[2px] block text-[#666]">Total with VAT</span>
-              <strong>{{ header_total_with_vat }}</strong>
-            </div>
-          </section>
-
-          <table class="my-2 w-full border-collapse text-sm" aria-label="Invoice items">
-            <colgroup>
-              <col /><col /><col /><col /><col /><col /><col /><col /><col />
-            </colgroup>
-            <thead>
-              <tr>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap">
-                  No.
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-left font-bold whitespace-nowrap">
-                  Item name
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap">
-                  Unit
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-center font-bold whitespace-nowrap">
-                  VAT
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap">
-                  Quantity
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap">
-                  Unit price
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap">
-                  Total
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap">
-                  VAT base
-                </th>
-                <th class="border-b border-t border-[#cfcfcf] px-[2px] py-px text-right font-bold whitespace-nowrap">
-                  Total with VAT
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for item in items %}
-              <tr>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                  {{ item.idx }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px">
-                  {{ item.item_name }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                  {{ item.unit }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-center">
-                  {{ item.vat_percent }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                  {{ item.quantity }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                  {{ item.unit_price }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                  {{ item.total }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                  {{ item.vat_base }}
-                </td>
-                <td class="border-b border-[#ececec] px-[2px] py-px text-right">
-                  {{ item.total_with_vat }}
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="px-6 pb-[18px]">
-          <div class="flex flex-col border-2 border-black">
-            <h1 class="text-sm font-bold">Tax recapitulation total</h1>
-            <div class="grid grid-cols-3 gap-x-10 text-[#666] text-sm pl-1 pr-10 mb-1">
-              <div class="flex justify-between">
-                <span>VAT rate</span>
-                <strong class="text-black">{{ vat_rate_1 }}</strong>
-              </div>
-              <div class="flex justify-between"></div>
-              <div class="flex justify-between">
-                <span>VAT %</span>
-                <strong class="text-black">{{ vat_percent_1 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>VAT rate</span>
-                <strong class="text-black">{{ vat_rate_2 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>Tax base</span>
-                <strong class="text-black">{{ tax_base_2 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>VAT %</span>
-                <strong class="text-black">{{ vat_percent_2 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>VAT rate</span>
-                <strong class="text-black">{{ vat_rate_3 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>Tax base</span>
-                <strong class="text-black">{{ tax_base_3 }}</strong>
-              </div>
-              <div class="flex justify-between">
-                <span>VAT %</span>
-                <strong class="text-black">{{ vat_percent_3 }}</strong>
+              <span>Celková cena nabídky s DPH v</span>
+              <div class="grid grid-cols-2 w-full">
+                <span>CZK</span>
+                <span class="text-right mr-[2px]">Proměnné</span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="grid grid-cols-3 gap-x-10 text-[#666] text-sm pl-[6px] pr-[42px]">
-            <div class="flex justify-between">
-              <span>VAT rate</span>
-              <strong class="text-black">{{ vat_rate_total }}</strong>
-            </div>
-            <div class="flex justify-between">
-              <span>VAT rate</span>
-              <strong class="text-black">{{ vat_rate_sum }}</strong>
-            </div>
-            <div class="flex justify-between">
-              <span>VAT %</span>
-              <strong class="text-black">{{ vat_percent_total }}</strong>
-            </div>
-            <div class="flex justify-between">
-              <span>VAT rate</span>
-              <strong class="text-black">{{ vat_rate_net }}</strong>
-            </div>
-          </div>
-        </td>
-      </tr>
+        <!-- Acceptance text -->
+        <p class="text-xs mb-10 text-[#333] leading-normal">
+          Podpisem této nabídky poptávající objednává výše uvedené služby a
+          akceptuje obchodní podmínky.
+        </p>
 
-      <tr>
-        <td class="px-6 pb-[18px]" style="vertical-align: bottom;">
-          <div class="mt-[3px] flex flex-col justify-between bg-[#EDEDED] p-1 pr-10 gap-1">
-            <div class="grid grid-cols-3 text-sm leading-[1.35] text-[#555]">
-              <div>Sales rep.</div>
-              <div class="text-center">{{ sales_rep }}</div>
-              <div class="text-right">Accounted by</div>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-sm font-bold">Total due</span>
-              <span class="text-sm font-bold">{{ total_due }}</span>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-
-    <tfoot class="print-foot" style="display: table-footer-group;">
-      <tr>
-        <td id="footer-spacer" style="height: var(--footer-height);"></td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-<script>
-window.onload = function () {
-  var headerEl = document.querySelector('.print-head');
-  var bodyEl = document.querySelector('.print-body');
-  var printFormatDiv = document.querySelector('.print-format');
-  var anchor = document.getElementById('page-number-anchor');
-
-  if (!headerEl || !bodyEl || !printFormatDiv || !anchor) return;
-
-  // Dynamically measure page height from mm to px (works at any DPI/scale)
-  var ruler = document.createElement('div');
-  ruler.style.cssText = 'position:absolute;visibility:hidden;height:297mm;';
-  printFormatDiv.appendChild(ruler);
-  var fullPagePx = ruler.getBoundingClientRect().height;
-  ruler.style.height = '5mm';
-  var topMarginPx = ruler.getBoundingClientRect().height;
-  printFormatDiv.removeChild(ruler);
-
-  var effectivePageHeight = fullPagePx - topMarginPx;
-  var headerHeight = headerEl.getBoundingClientRect().height;
-  var contentHeightPerPage = effectivePageHeight - headerHeight;
-  var totalContentHeight = bodyEl.getBoundingClientRect().height;
-
-  var numberOfPages = Math.max(1, Math.ceil(totalContentHeight / contentHeightPerPage));
-
-  if (numberOfPages > 1) {
-    var theads = document.querySelectorAll('.print-format table thead');
-    var totalTheadHeight = 0;
-    theads.forEach(function (thead) {
-      totalTheadHeight += thead.getBoundingClientRect().height;
-    });
-    var adjustedHeight = totalContentHeight + totalTheadHeight * (numberOfPages - 1);
-    numberOfPages = Math.max(1, Math.ceil(adjustedHeight / contentHeightPerPage));
-  }
-
-  // Anchor position relative to the thead (stable across screen/print layouts)
-  var anchorInHeader = anchor.getBoundingClientRect().top - headerEl.getBoundingClientRect().top;
-
-  for (var i = 0; i < numberOfPages; i++) {
-    var span = document.createElement('span');
-    span.textContent = 'Page ' + (i + 1) + ' of ' + numberOfPages;
-    span.style.position = 'absolute';
-    span.style.top = (i * effectivePageHeight) + anchorInHeader + 'px';
-    span.style.right = '1.5rem';
-    span.style.fontSize = '0.875rem';
-    span.style.lineHeight = '1.4286';
-    span.style.color = '#6b7280';
-    printFormatDiv.appendChild(span);
-  }
-};
-</script>
+        <!-- Signature section -->
+        <div class="text-xs mb-20">
+          <div class="font-bold mb-[10px]">DNE:</div>
+          <div class="font-bold mb-[10px]">V:</div>
+          <div class="font-bold">PODPIS:</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -210,6 +210,13 @@
 
 .uppercase { text-transform: uppercase; }
 
+.page-number {
+  position: absolute;
+  right: 5mm;
+  font-size: 10px;
+  color: #6b7280;
+}
+
 /* === Print Overrides === */
 
 @media print {
@@ -225,4 +232,5 @@
   tbody > tr {
     page-break-inside: avoid;
   }
+
 }

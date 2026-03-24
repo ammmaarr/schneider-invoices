@@ -1,0 +1,202 @@
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 10mm 18mm 10mm;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #222;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .doc-header {
+    padding: 4mm 0 6mm 0;
+  }
+
+  .fallback-company {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  .fallback-sub {
+    text-align: center;
+    font-size: 8pt;
+    color: #666;
+    margin-top: 2mm;
+  }
+
+  .invoice-meta {
+    margin: 0 0 5mm 0;
+  }
+
+  .invoice-meta td {
+    padding: 2px 0;
+    vertical-align: top;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .items th,
+  .items td {
+    border: 1px solid #bbb;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .items th {
+    background: #f3f3f3;
+    text-align: left;
+  }
+
+  .num {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .content-wrap {
+    padding-bottom: 16mm; /* reserve space for footer */
+  }
+
+  .print-footer {
+    display: none;
+  }
+
+  .totals {
+    width: 240px;
+    margin-left: auto;
+    margin-top: 6mm;
+  }
+
+  .totals td {
+    border: 1px solid #bbb;
+    padding: 5px;
+  }
+
+  @media print {
+    .print-footer {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 7pt;
+      color: #666;
+      background: white;
+      border-top: 1px solid #ccc;
+      padding-top: 2mm;
+    }
+
+    .print-footer .inner {
+      padding: 0 10mm;
+    }
+  }
+</style>
+
+<div class="print-footer">
+  <div class="inner">
+    This is a footer that I as ammar will personally create to repeat on every
+    page
+  </div>
+</div>
+
+<div class="content-wrap">
+  <table>
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          <table class="invoice-meta">
+            <tr>
+              <td><strong>Invoice No:</strong> TEST-INV-0001</td>
+              <td class="right"><strong>Date:</strong> 2026-03-24</td>
+            </tr>
+            <tr>
+              <td><strong>Customer:</strong> Test Customer</td>
+              <td class="right"><strong>Currency:</strong> EGP</td>
+            </tr>
+          </table>
+
+          <table class="items">
+            <thead>
+              <tr>
+                <th style="width: 7%">#</th>
+                <th style="width: 38%">Item</th>
+                <th style="width: 25%">Description</th>
+                <th style="width: 10%" class="center">Qty</th>
+                <th style="width: 10%" class="num">Rate</th>
+                <th style="width: 10%" class="num">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in range(1, 121) %}
+              <tr>
+                <td class="center">{{ i }}</td>
+                <td>Test Item {{ i }}</td>
+                <td>
+                  Multi-page Chromium print test row {{ i }}. This text is
+                  slightly long so rows wrap and produce multiple pages for
+                  repeated header and footer testing.
+                </td>
+                <td class="center">{{ (i % 4) + 1 }}</td>
+                <td class="num">{{ 100 + i }}</td>
+                <td class="num">{{ ((i % 4) + 1) * (100 + i) }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <table class="totals">
+            <tr>
+              <td><strong>Subtotal</strong></td>
+              <td class="num">99,999.00</td>
+            </tr>
+            <tr>
+              <td><strong>Tax</strong></td>
+              <td class="num">14,000.00</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td class="num"><strong>113,999.00</strong></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

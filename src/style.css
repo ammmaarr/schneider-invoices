@@ -1,13 +1,53 @@
 @import "tailwindcss";
 
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
 @page {
   size: A4;
   margin: 0;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.doc-header {
+  padding: 4mm 0 6mm 0;
+}
+.content-wrap {
+  padding-bottom: 16mm;
+}
+
+.print-footer {
+  display: none;
+}
 @media print {
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  .print-footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 7pt;
+    color: #666;
+    background: white;
+    border-top: 1px solid #ccc;
+    padding-top: 2mm;
+  }
+  .print-footer .inner {
+    padding: 0 10mm;
   }
 }
