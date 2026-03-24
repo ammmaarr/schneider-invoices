@@ -5,35 +5,6 @@ default(none) %}
 
 <link rel="stylesheet" href="quotation.css" />
 
-<!-- ═══ Fixed Footer (repeats on every printed page) ═══ -->
-<div class="print-footer">
-  <div class="inner">
-    <div
-      class="h-[125px] w-full relative overflow-hidden px-8 pb-4 flex items-end isolate"
-    >
-      <img
-        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iVnJzdHZhXzEiIGRhdGEtbmFtZT0iVnJzdHZhIDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAyNjAzLjQ5IDM1NSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogbm9uZTsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjNjA2MDYwOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNkZWRlZGU7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgY2xpcC1wYXRoOiB1cmwoI2NsaXBwYXRoLTEpOwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIG9wYWNpdHk6IC41OwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIGNsaXAtcGF0aDogdXJsKCNjbGlwcGF0aCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXBwYXRoIj4KICAgICAgPHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjQ4MCIgaGVpZ2h0PSIyNjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXBwYXRoLTEiPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjIxNjguODIiIHk9Ii0xMTkuODYiIHdpZHRoPSIyMDguNTUiIGhlaWdodD0iNjM0LjIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjg0LjEyIDI0MDEuNTUpIHJvdGF0ZSgtODApIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfNDUiIGRhdGEtbmFtZT0iR3JvdXAgNDUiPgogICAgPGcgY2xhc3M9ImNscy02Ij4KICAgICAgPGcgaWQ9Ikdyb3VwXzQ0IiBkYXRhLW5hbWU9Ikdyb3VwIDQ0Ij4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8xMTAiIGRhdGEtbmFtZT0iUGF0aCAxMTAiIGNsYXNzPSJjbHMtMyIgZD0iTTEuNDYsMHYyNTkuNjdzMTIzNi40OS05OS43OCwxNzM1LjY1LTk4LjA4YzQ1Ni4zNywxLjU1LDc0Mi42OCw3OC45NCw3NDIuNjgsNzguOTRWMEgxLjQ2WiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgogIDxnIGlkPSJHcm91cF83MCIgZGF0YS1uYW1lPSJHcm91cCA3MCIgY2xhc3M9ImNscy01Ij4KICAgIDxnIGNsYXNzPSJjbHMtNCI+CiAgICAgIDxnIGlkPSJHcm91cF81OSIgZGF0YS1uYW1lPSJHcm91cCA1OSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTIzIiBkYXRhLW5hbWU9IlBhdGggMTIzIiBjbGFzcz0iY2xzLTIiIGQ9Ik0yMTY5LjU0LDEzMC44OGMtNC43Nyw3LjEtOC4zNCwxNC45Mi0xMC41OSwyMy4xNy0zLjUxLDEzLjMxLTUuOSwzNy40LTQuMjIsNDcuNzQsMCwwLTkuMjEtNTQuOTYtOS40LTU0Ljk3czExLjY2LTExLjA0LDI0LjIxLTE1Ljk0Ii8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTI0IiBkYXRhLW5hbWU9IlBhdGggMTI0IiBjbGFzcz0iY2xzLTIiIGQ9Ik0yMzUwLjc2LDIzMi44NmMxMi4wNSwxMC40NSwyNC43MSwyMS4wNiwzMC42MiwyNC45NSwxMy4zNiw4Ljc4LDQyLjg3LDI2LjM2LDc2LjIsMzIuOCwzMy4yNSw2LjQyLDgwLjYxLTEuNDEsMTI4LjI0LTQwLjc4LTMuODQsMy4wMS00Ni4wNSwzNS40OC03Ni4yLDM4LjE4LDAsMC0yOC4yNiw1Ljc0LTUxLjU5LS41NSwwLDAtNDcuNS0xNS4xNC03My41OS0zMi45Mi0xMC45Ni03LjU1LTIxLjQzLTE1LjgtMzEuMzItMjQuNzEtLjA2LjEtLjE0LjIxLS4yMi4zMS0uNjkuOTMtMS40MSwxLjg0LTIuMTQsMi43MiIvPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzEyNSIgZGF0YS1uYW1lPSJQYXRoIDEyNSIgY2xhc3M9ImNscy0yIiBkPSJNMTk2Ni4wMywxMTUuOTJjLjgyLDEuNzksMi44MSwzLjY1LDIxLjQ5LTguOTgsMCwwLDU5LjYyLDMzLjk4LDgxLjA0LDc5LjEzLDEyLjksMjcuMzIsMjIuNDUsNTYuMTEsMjguNDQsODUuNzIsMCwwLDEuMTMsMS4yMywxLjUyLS41OXMtMS45My00OS4zOCwxNS44LTg0LjkxYzAsMCwyNi4xNS00OC4wNiw2Ni43Ni01OS41LDUuMDItMS4zOCwxMC4zNi0uODgsMTUuMDQsMS4zOSwyMC4zMyw5LjcyLDgzLjQsNDIuNDcsMTU3LjI0LDEwNy4xMy41My0xLjI3LDEuOTUtMi40OCwyLjkyLTMuNzMtMTQuMi0xMS42OC0xMTQuODUtMTAyLjgxLTE3NC4wNy0xNDEuNjctNDguODItMzIuMDMtMTAyLjUyLTMxLjc0LTEzMC43Ny0yNy42My0yOC4yNSw0LjExLTYxLjM5LDIxLjI1LTczLjg2LDM1LjI3LTEyLjQ3LDE0LjAyLTEyLjM3LDE2LjU5LTExLjU1LDE4LjM4Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg=="
-        alt="footer"
-        class="footer-image w-full absolute top-0 left-0 -z-10 opacity-70"
-      />
-      <div
-        class="grid grid-cols-3 w-full text-[10px] text-[#2B2B2B] font-semibold justify-between"
-      >
-        <p class="self-end">
-          SCHNEIDER construction s.r.o. <br />
-          Průmyslová č.957/5 <br />
-          747 23 Bolatice
-        </p>
-        <p class="self-center text-center">www.hlinikovesystemy.cz</p>
-        <p class="self-end justify-self-end">
-          GSM +420 602 331 047 <br />
-          E-MAIL: obchod@hlinikovesystemy.cz
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ Main Content ═══ -->
 <div class="content-wrap">
   <table>
@@ -116,9 +87,9 @@ default(none) %}
 
           <!-- Quote description -->
           <!-- <div class="border-b-2 border-[#686868] pb-[6px] mb-[14px]">
-            <span class="text-xs">Cenová nabídka na: </span>
-            <span class="text-xs">{{ doc.title }}</span>
-          </div> -->
+              <span class="text-xs">Cenová nabídka na: </span>
+              <span class="text-xs">{{ doc.title }}</span>
+            </div> -->
         </td>
       </tr>
 
@@ -130,11 +101,11 @@ default(none) %}
             style="table-layout: fixed"
           >
             <colgroup>
-              <col style="width: 45%" />
-              <col style="width: 13%" />
+              <col style="width: 37%" />
               <col style="width: 15%" />
-              <col style="width: 10%" />
               <col style="width: 17%" />
+              <col style="width: 12%" />
+              <col style="width: 19%" />
             </colgroup>
             <thead>
               <tr>
