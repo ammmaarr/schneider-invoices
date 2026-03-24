@@ -42,7 +42,7 @@
               </div>
               <div class="grid grid-cols-2 gap-10">
                 <span class="font-bold text-[#686868]">VYTVOŘENO:</span>
-                <span class="font-bold">{{ frappe.format(doc.transaction_date,{ "fieldtype": "Date" }) }}</span>
+                <span class="font-bold">{{ frappe.format(doc.creation,{ "fieldtype": "Date" }) }}</span>
               </div>
               <div class="grid grid-cols-2 gap-10">
                 <span class="font-bold text-[#686868]">PLATNOST:</span>
@@ -71,7 +71,7 @@
 
                 <div class="font-bold">{{ billing_addr.street }}</div>
                 <div class="font-bold">{{ billing_addr.zip }} {{ billing_addr.city }}</div>
-                <div class="font-bold">IČ: {{ customer.customer.name }}</div>
+                <div class="font-bold">IČ: {{ customer.name }}</div>
                 <div class="font-bold">DIČ: {{ customer.vat_id }}</div>
 
               </div>
@@ -127,7 +127,7 @@
                   item.uom }}
                 </td>
                 <td class="px-2 py-2 text-center">{{ frappe.format(item.unit_price, { "fieldtype": "Currency", "precision": 2 }) }}</td>
-                <td class="px-2 py-2 text-center">{{ item.vat_rate }}</td>
+                <td class="px-2 py-2 text-center">{{ item.vat_rate }} %</td>
                 <td class="px-2 py-2 text-right font-bold">
                   {{ frappe.format(item.amount, { "fieldtype": "Currency", "precision": 2 }) }}
                 </td>
