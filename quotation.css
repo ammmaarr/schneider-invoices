@@ -6,10 +6,10 @@
   margin-bottom: 100px !important;
 
   @bottom-center {
-    content: "\ASCHNEIDER construction s.r.o.                   www.hlinikovesystemy.cz\A"
-      "Průmyslová č.957/5                   E-MAIL: obchod@hlinikovesystemy.cz\A"
-      "747 23 Bolatice                                    GSM +420 602 331 047\A"
-      "Page " counter(page) " of " counter(pages);
+    content: "\ASCHNEIDER construction s.r.o.                       hlinikovesystemy.cz\A"
+      "Průmyslová č.957/5                           obchod@hlinikovesystemy.cz\A"
+      "747 23 Bolatice                                        +420 602 331 047\A"
+      "Strana " counter(page) "/" counter(pages);
 
     white-space: pre;
     font-family: monospace;
