@@ -24,9 +24,7 @@ default(none) %}
       <tr>
         <td class="px-[30px] pt-[14px]">
           <!-- NABÍDKA + Date/Number row -->
-          <div
-            class="flex items-end justify-between pb-2 mb-2 border-b border-[#686868]"
-          >
+          <div class="flex items-end justify-between pb-2 mb-2 border-b border-[#686868]">
             <div class="flex items-baseline gap-5 pt-2 text-sm">
               <span class="font-bold text-[#686868]">NABÍDKA:</span>
               <span class="font-bold">{{ doc.title }}</span>
@@ -38,39 +36,34 @@ default(none) %}
               </div>
               <div class="grid grid-cols-2 gap-10">
                 <span class="font-bold text-[#686868]">VYTVOŘENO:</span>
-                <span class="font-bold"
-                  >{{ frappe.format(doc.creation,{ "fieldtype": "Date" })
-                  }}</span
-                >
+                <span class="font-bold">{{ frappe.format(doc.creation,{ "fieldtype": "Date" })
+                  }}</span>
               </div>
               <div class="grid grid-cols-2 gap-10">
                 <span class="font-bold text-[#686868]">PLATNOST:</span>
-                <span class="font-bold"
-                  >{{ frappe.format(doc.valid_until,{ "fieldtype": "Date" })
-                  }}</span
-                >
+                <span class="font-bold">{{ frappe.format(doc.valid_until,{ "fieldtype": "Date" })
+                  }}</span>
               </div>
             </div>
           </div>
 
           <!-- Company Info + Contact -->
-          <section
-            class="grid grid-cols-2 gap-[24px] mb-[14px] border-b border-[#D1D1D1] pb-6"
-          >
+          <section class="grid grid-cols-2 gap-[24px] mb-[14px] border-b border-[#D1D1D1] pb-6">
             <div class="text-xs leading-[1.7] text-[#6B6B6B] pt-2">
-              <div class="font-bold">SCHNEIDER construction s.r.o.</div>
+              <div class="font-bold text-[#6b6b6b]">SCHNEIDER construction s.r.o.</div>
               <div class="text-black font-bold">Průmyslová 93/5</div>
               <div class="text-black font-bold">747 23 Bolatice</div>
               <div class="text-black font-bold">IČ: {{ cs.company_id }}</div>
               <div class="text-black font-bold">DIČ: {{ cs.vat_id }}</div>
+
+              <div class="font-bold mt-2 text-[#6b6b6b]">Kontakt</div>
+              <div class="text-black font-bold ">{{ doc.owner }}</div>
             </div>
             <div>
               <div class="py-1 text-[8px] font-bold uppercase">
                 POPTÁVAJÍCÍ:
               </div>
-              <div
-                class="border border-[#6b6b6b] pb-10 p-2 text-xs flex flex-col gap-1"
-              >
+              <div class="border border-[#6b6b6b] pb-10 p-2 text-xs flex flex-col gap-1">
                 <div class="font-bold text-[#6b6b6b]">
                   {{ customer.customer_name }}
                 </div>
@@ -96,10 +89,7 @@ default(none) %}
       <!-- ── Items Table ── -->
       <tr>
         <td class="px-[30px]">
-          <table
-            class="w-full border-collapse text-xs mb-[6px]"
-            style="table-layout: fixed"
-          >
+          <table class="w-full border-collapse text-xs mb-[6px]" style="table-layout: fixed">
             <colgroup>
               <col style="width: 37%" />
               <col style="width: 15%" />
@@ -109,29 +99,19 @@ default(none) %}
             </colgroup>
             <thead>
               <tr>
-                <th
-                  class="px-2 py-2 text-left font-normal text-[#c4913c] italic border-b border-[#e0d6c2]"
-                >
+                <th class="px-2 py-2 text-left font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">
                   Položka
                 </th>
-                <th
-                  class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]"
-                >
+                <th class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">
                   Množství
                 </th>
-                <th
-                  class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]"
-                >
+                <th class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">
                   Jednotková cena
                 </th>
-                <th
-                  class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]"
-                >
+                <th class="px-2 py-2 text-center font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">
                   Sazba DPH
                 </th>
-                <th
-                  class="px-2 py-2 text-right font-normal text-[#c4913c] italic border-b border-[#e0d6c2]"
-                >
+                <th class="px-2 py-2 text-right font-normal text-[#c4913c] italic border-b border-[#e0d6c2]">
                   Mezisoučet
                 </th>
               </tr>
@@ -158,10 +138,7 @@ default(none) %}
               </tr>
               {% if item.note %}
               <tr>
-                <td
-                  colspan="4"
-                  class="px-2 pt-3 pb-4 text-[11px] text-[#333] leading-relaxed"
-                >
+                <td colspan="4" class="px-2 pt-3 pb-4 text-[11px] text-[#333] leading-relaxed">
                   {% set items = item.note.split('-') %} {% for item in items %}
                   {% if item.strip() != "" %} - {{ item.strip() }}<br />
                   {% endif %} {% endfor %}
@@ -177,26 +154,18 @@ default(none) %}
       <tr>
         <td class="px-[30px]">
           <div class="flex justify-end mb-[14px]">
-            <div
-              class="w-full bg-[#D1D1D1] text-black border border-black text-xs grid grid-cols-[1fr_2fr]"
-            >
+            <div class="w-full bg-[#D1D1D1] text-black border border-black text-xs grid grid-cols-[1fr_2fr]">
               <div></div>
-              <div
-                class="items-center justify-between p-2 grid grid-cols-2 gap-y-2"
-              >
+              <div class="items-center justify-between p-2 grid grid-cols-2 gap-y-2">
                 <span class="font-bold">Celková cena bez DPH v</span>
                 <div class="grid grid-cols-2 w-full">
-                  <span class="font-bold text-right"
-                    >{{ frappe.format(doc.subtotal, { "fieldtype": "Currency",
-                    "precision": 2 }) }}</span
-                  >
+                  <span class="font-bold text-right">{{ frappe.format(doc.subtotal, { "fieldtype": "Currency",
+                    "precision": 2 }) }}</span>
                 </div>
                 <span>Celková cena nabídky s DPH v</span>
                 <div class="grid grid-cols-2 w-full">
-                  <span class="text-right mr-[2px]"
-                    >{{ frappe.format(doc.total_amount, { "fieldtype":
-                    "Currency", "precision": 2 }) }}</span
-                  >
+                  <span class="text-right mr-[2px]">{{ frappe.format(doc.total_amount, { "fieldtype":
+                    "Currency", "precision": 2 }) }}</span>
                 </div>
               </div>
             </div>
@@ -216,8 +185,7 @@ default(none) %}
       </tr>
       <tr>
         <td>
-          <div
-            style="
+          <div style="
               display: flex;
               flex-direction: column;
               gap: 20px;
@@ -225,270 +193,79 @@ default(none) %}
               page-break-inside: avoid;
               justify-content: center;
               align-items: center;
-            "
-          >
+            ">
             <h1 style="color: #ff8c00" class="font-bold">
               VŠEOBECNÉ OBCHODNÍ PODMÍNKY
             </h1>
-            <p
-              style="
+            <p style="
                 column-count: 4;
                 font-size: 6px;
                 white-space: pre-wrap;
                 line-height: 1.5;
-              "
-            >
-              I. Úvodní ustanovení 1. Tyto všeobecné obchodní podmínky (dále jen
-              „obchodní podmínky“ nebo „VOP“) obchodní společnosti SCHNEIDER
-              construction s.r.o., sídlem Bolatice, Průmyslová 957/5, PSČ 747
-              23, IČ 27790991, zapsané v obchodním rejstříku vedeném Krajským
-              soudem v Ostravě, oddíl C, vložka 51900 (dále jen „zhotovitel“)
-              upravují v souladu s ustanovením § 1751 odst. 1 zákona č. 89/2012
-              Sb., občanský zákoník (dále jen „občanský zákoník“) vzájemná práva
-              a povinnosti smluvních stran vzniklé v souvislosti nebo na základě
-              smlouvy o dílo (dále jen „smlouva“) uzavírané mezi zhotovitele a
-              jinou osobou (dále jen „objednatelem“). 2.Nedílnou součástí každé
-              smlouvy, kterou v rámci obchodních vztahů založených smlouvou
-              budou tyto VOP. Neobsahuje-li smlouva v konkrétním případě odlišné
-              ustanovení, použití jakýchkoliv všeobecných podmínek objednatele
-              je vyloučeno. Součástí smlouvy jsou rovněž písemná oboustranně
-              akceptovaná právní jednání (upřesnění předmětu díla, místa plnění
-              apod.) v podobě písemné či elektronické komunikace smluvních stran
-              jakož i přílohy, které mají dle vůle smluvních stran ke smlouvě
-              jako její nedílná součást náležet. II. Uzavření smlouvy 1. Veškeré
-              neadresné nabídky zhotovitele nebo nabídky označené jako nezávazné
-              nebo předběžné se považují za orientační a nezávazné. Adresnou
-              nabídku je zhotovitele oprávněn odvolat i ve lhůtě k jejímu
-              přijetí, která (nebude-li stanoveno v konkrétním případě jinak)
-              činí 14 dnů ode dne doručení nabídky objednateli. 2. Objednávky
-              učiněné na základě nabídek zhotovitele se považují z návrh na
-              uzavření smlouvy, a smlouva se považuje za uzavřenou, budou-li
-              objednávky ze strany zhotovitele akceptovány. Údaje uvedené v
-              objednávce objednatelem jsou pro objednatele závazné a tento je
-              není oprávněn měnit či doplňovat bez předchozího písemného
-              souhlasu zhotovitele. 3. Objednávky mohou být činěny písemně nebo
-              prostřednictvím e-mailu. Akceptace objednávky bude probíhat
-              písemně nebo e-mailem na adresu, ze které byla objednávka
-              odeslána, příp. na jinou elektronickou adresu uvedenou v
-              objednávce. 4. Objednávka objednatele musí obsahovat přesnou
-              specifikaci požadovaného díla, tedy zejména název a číselné
-              označení zakázky, cenu díla dle cenové nabídky zhotovitele, číslo
-              cenové nabídky, popis místa plnění, kontaktní údaje objednatele,
-              výkresovou dokumentaci, rozsahu díla (druh díla, množství,
-              rozměry, barva, tloušťka skla), termín pro zaměření díla, datum
-              činění objednávky, a musí být podepsaná osobou oprávněnou
-              zastupovat objednatele. V objednávce musí být uvedeno, že si je
-              objednatel vědom závaznosti těchto VOP při uzavření smluvního
-              vztahu se zhotovitelem. 5. V případě objednávky, kdy bude nutné
-              pro provedení díla vypracovat technické řešení (výrobní
-              dokumentaci) ze strany zhotovitele, je objednatel povinen
-              technické řešení před zahájením provádění díla na základě
-              konkrétní objednávky písemně odsouhlasit. Zhotovitel není povinen
-              provést dílo, které by neodpovídalo technickým možnostem a
-              parametrům dílů, které mají být v rámci provádění díla instalovány
-              nebo neodsouhlasil-li objednatele technické řešení. 6. Změny a
-              doplňky smlouvy lze provést pouze po dohodě obou smluvních stran
-              formou písemných dodatků s výjimkou stanovení termínu výroby dílů
-              určených k provedení díla a termínu konečného provedení díla
-              stanoveného zhotovitelem (dále jen „termín výroby dílů a provedení
-              díla“). Učiní-li jedna ze smluvních stran nabídku ve smyslu § 1731
-              občanského zákoníku, vylučuje se její akceptace s odchylkou s
-              výjimkou odchylky v termínu výroby díků a provedení díla ze strany
-              zhotovitele. V daném případě se akceptace s odchylkou bude
-              považovat za zcela nový návrh druhé strany, který rovněž nelze
-              akceptovat s odchylkou. Neplatnost právního jednání (v důsledku
-              nedodržení jeho ujednané formy) souvisejícího s touto smlouvou lze
-              namítat i v případě, že již bylo některou ze smluvních stran
-              plněno. Ustanovení § 582 odst. 2 NOZ se proto nepoužije. III.
-              Podmínky plnění díla 1. Smluvní strany se mohou po uzavření
-              smlouvy o dílo dohodnout na rozšíření díla (tzv. vícepráce). Tato
-              dohoda musí být uzavřena ve formě písemného dodatku ke smlouvě o
-              dílo a musí obsahovat předmět a rozsah víceprací a cenu za tyto
-              vícepráce. Cena za vícepráce bude objednateli zhotovitelem
-              fakturována se splatností do 30 dnů od provedení víceprací.
-              Budou-li vícepráce provedeny a nedojde-li k uzavření dodatku ke
-              smlouvě, bude cena za jejich provedení účtována dle cen obvyklých
-              jako bezdůvodné obohacení. 2. Zhotovitel provede díla v termínech
-              sjednaných. Objednatel je povinen na výzvu umožnit zhotoviteli
-              přístup k místu, ve kterém má být dílo zhotovováno (na
-              staveniště), a to nejpozději vždy do 3 dnů od výzvy ke
-              zpřístupnění místa. Termín pro zhotovení díla se prodlužuje o
-              dobu, po kterou bude objednatel v prodlení s umožněním zhotoviteli
-              přístupu k předmětnému místu či s přípravou stavební připravenosti
-              stavby pro provedení díla. Zhotovitel není v prodlení, dojde-li k
-              prodlení s výrobou dílů či materiálu, které mají být použity k
-              provedení díla a jejichž výrobu provádí třetí osoba, a to po dobu
-              prodlení třetí osoby. Zhotovitel je oprávněn prodloužit ve smlouvě
-              sjednaný termín plnění o dobu 4 týdnů z důvodu nezaviněných
-              zhotovitelem či objednatelem. 3. V případě nepříznivých
-              klimatických podmínek (dešťové či sněhové přeháňky po dobu delší
-              než 1 hod. denně nebo silný vítr nebo teploty pod 10 st. C) se o
-              dobu takovýchto nepříznivých klimatických podmínek prodlužujte
-              termín provádění díla. Zápisem ve stavebním deníku mohou strany
-              dohodnout náhradní postup a termíny. 4. Zhotovitel splní svou
-              povinnost zhotovit dílo jeho provedením a předáním. O předání díla
-              bude sepsáno potvrzení o předání a převzetí díla. 5. Objednatel je
-              povinen převzít na výzvu zhotovitele dílo příp. jeho dílčí část.
-              Dílčí částí se rozumí část, jejíž provedení, dokončení a užívání
-              není ovlivněno provedením zbylé části. Objednatel je povinen
-              převzít provedené dílo příp. jeho část s ojedinělými drobnými
-              vadami, které samy o sobě ani ve spojení s jinými nebrání užívání
-              díla funkčně nebo esteticky, ani jeho užívání podstatným způsobem
-              neomezují a zhotovitel se v zápise o předání zaváže v přiměřené
-              lhůtě tyto odstranit. 6. Poruší-li objednatel svou povinnost
-              převzít dílo, má se dílo za převzato dnem, ve kterém měl
-              objednatel dle výzvy dílo převzít, avšak tak neučinil. Dílo se má
-              za převzaté i v případě, že výzva k převzetí nebyla objednateli
-              doručena z důvodů, že objednatel odmítl převzít poštovní zásilku s
-              výzvou nebo ji nevyzvedl v úložní lhůtě a rovněž předáním osobě
-              užívající oprávněně nemovitost nebo její část (např. byt), na
-              které bylo dílo nebo jeho část provedeno. 7. Vlastníkem
-              zhotovovaného díla je zhotovitel. Objednatel nabývá vlastnické
-              právo k dílu okamžikem převzetí díla a zaplacením sjednané ceny
-              díla v plné výši. 8. Objednatel na sebe přebírá nebezpečí změn
-              okolností ve smyslu ust. § 1765 odst. 2 občanského zákoníku. Tím
-              nejsou dotčena práva zhotovitele vyplývající ze změny okolností
-              dle ust. § 1765 a 1766 občanského zákoníku. III. Platební podmínky
-              1. Nárok zhotovitele na zaplacení ceny díla vzniká předáním díla.
-              2. Součástí ceny díla je DPH v zákonem stanovené výši. Smluvní
-              strany dohodly, že v případě zvýšení sazeb DPH po uzavření smlouvy
-              je zhotovitel oprávněn navýšit cenu díla o částku odpovídající
-              rozdílu do DPH kalkulované sazbou platnou ke dni vyúčtování ceny
-              díla. 3. Zhotovitel provede písemné vyúčtování ceny díla a
-              poskytnutých záloh ve formě daňového dokladu, který zhotovitel
-              vystaví a vydá objednateli. 4. Cena prací a materiálů, uvedená v
-              akceptované objednávce nemůže být zhotovitelem překročena bez
-              dohody smluvních stran. K překročení ceny díla může dojít jen v
-              důsledku provedení víceprací odsouhlasených stranami. 5. Více nebo
-              méně práce do výše 10% z celkové ceny díla lze řešit zápisem do
-              stavebního/montážního deníku nebo na základě rozpočtu podepsaným
-              oběma stranami, nad 10% z celkové ceny díla pak dodatkem ke
-              smlouvě, ve kterém strany dohodnou i případnou úpravu termínu
-              předání díla a ceny díla. 6. Objednatel je povinen poskytnout
-              zálohu na cenu díla ve výši min. 30 % ceny díla, splatnou
-              nejpozději do 10 dnů do uzavření smlouvy. Zhotovitel je oprávněn
-              průběžně účtovat dílčí realizovaná plnění, max. však do výše 90%
-              smluvní ceny díla, se splatností 21 dnů ode dne vystavení
-              vyúčtování, 7. Konečná faktura (s odečteným dílčím plněním) bude
-              vystavena po dokončení a předání díla, se splatností max. 21 dnů
-              ode dne vystavení. 8. Pro případ prodlení objednatele s převzetím
-              díla je zhotovitel oprávněn vyúčtovat cenu díla ode dne, ve kterém
-              měl objednatel na výzvu zhotovitele dílo převzít, avšak tak
-              neoprávněn neučinil. 9. Faktura musí být doručena minimálně pět
-              pracovních dnů před datem splatnosti. V pochybnostech se má za to,
-              že byla doručena třetí pracovní den po odeslání. 10. Uhrazením se
-              rozumí připsání hrazené částky na účet zhotovitele. 11. Pro případ
-              prodlení se zaplacením ceny má zhotovitel právo požadovat vedle
-              zaplacení ceny také úroky z prodlení a smluvní pokutu ve výši
-              0,05 % z dlužné částky za každý den prodlení s úhradou. IV. Práva
-              a povinnosti smluvních stran 1. Objednatel je povinen: a)
-              poskytnout zhotoviteli veškerou nutnou součinnost, zejména mu na
-              jeho žádost včas poskytnout údaje nutné pro zhotovení díla a
-              zajistit zpřístupnění místa zhotovování díla; b) nejpozději do tří
-              pracovních dnů ode dne uzavření smlouvy určit oprávněnou osobu,
-              která bude oprávněna jednat jménem objednatele, zejména provádět
-              kontrolu provádění díla, není li tato uvedena ve smlouvě o dílo;
-              c) nejpozději do 30 dnů ode dne podpisu smlouvy předat zhotoviteli
-              staveniště a veškeré věci nezbytné pro provedení díla a zajistit
-              souhlas resp. povolení příslušného správního orgánu, nezbytné k
-              provádění díla v souladu s právními předpisy a souhlas vlastníka
-              stavby. 2. Zhotovitel je povinen: a) provést dílo řádně a včas;
-              při provádění díla je zhotovitel povinen postupovat v souladu s
-              pokyny objednatele, b) včas informovat objednatele o všech
-              zjištěných nedostatcích a závadách technického charakteru, o
-              nevhodnosti objednatelem požadovaného nebo dodaného materiálu či
-              nevhodnosti pokynů objednatele, c) přerušit v nezbytném rozsahu
-              provádění díla, jestliže nevhodné věci nebo pokyny objednatele
-              překáží v řádném provádění díla, a to do doby výměny věcí nebo
-              změny pokynů nebo písemného sdělení objednatele, že na provádění
-              díla trvá s použitím předaných věcí a daných pokynů. O dobu, po
-              kterou bylo nutno provádění díla přerušit, se prodlužuje lhůta
-              stanovená pro jeho dokončení. d) oznámit bez zbytečného odkladu
-              objednateli skryté překážky, týkající se věci, na níž má být
-              provedena oprava nebo úprava, nebo místa, kde má být dílo
-              provedeno, pokud tyto překážky znemožňují provedení díla
-              dohodnutým způsobem a je povinen navrhnout objednateli změnu díla.
-              Do dosažení dohody o změně díla je zhotovitel oprávněn provádění
-              díla přerušit. O dobu přerušení se prodlužuje termín pro splnění
-              díla. Nedohodnou-li se strany v přiměřené lhůtě na změně smlouvy,
-              může kterákoliv ze stran od smlouvy odstoupit; e) vrátit po
-              dokončení díla bez zbytečného odkladu objednateli ty podklady a
-              věci, které mu byly předány k provedení díla a nebyly při
-              provádění díla zpracovány. 3. Kontrola plnění 3.1. Smluvní strany
-              se dohodly, že průběh provádění díla a plnění smlouvy je
-              objednatel oprávněn kontrolovat prostřednictvím oprávněné osoby,
-              kterou objednatel stanoví. 3.2. Oprávněná osoba objednatele je
-              oprávněna zejména sledovat, zda je dílo realizováno dle smluvených
-              podmínek, technických norem a jiných právních předpisů, a pokynů a
-              požadavků objednatele. Dále bude oprávněna vystupovat jménem
-              objednatele a zastupovat objednatele při jednáních se
-              zhotovitelem; není však oprávněna měnit nebo doplňovat obsah této
-              smlouvy, může však udělovat zhotoviteli písemné pokyny upřesňující
-              požadavky na dílo v rozsahu sjednaném smlouvou o dílo. 3.3.O
-              průběhu kontroly bude vždy pořízen zápis, který bude obsahovat
-              zejména datum kontroly, předmět a průběh kontroly, shledané vady,
-              připomínky a pokyny oprávněné osoby objednatele, vyjádření
-              oprávněné osoby zhotovitele, závěry kontroly, podpisy oprávněné
-              osoby objednatele a oprávněné osoby zhotovitele. V. Odpovědnost za
-              vady díla 1. Zhotovitel odpovídá za vady, které má dílo při
-              převzetí objednatelem, jakož i za vady, které se projeví po
-              převzetí v záruční době. Záruční doba na práce činí 36 měsíců ode
-              dne převzetí díla a záruční doba na materiál, jednotlivé části
-              díla a mechanismy je poskytnuta po dobu záruční doby poskytované
-              jejich výrobcem. Záruční doba se zkracuje o dobu, kterou
-              objednatel neoprávněně odmítl převzít dílo. 2. Objednatel má v
-              případě řádné a oprávněné reklamace vad díla nároky z vad díla
-              stanovené občanským zákoníkem. Tyto nároky musí být písemně
-              uplatněny u zhotovitele v záruční době bez zbytečného odkladu
-              poté, co je mohl při dostatečné péči zjistit. Zjevné vady musí
-              objednatel reklamovat nejpozději při převzetí a předání díla. 3.
-              Zhotovitel neodpovídá za vady díla vzniklé nevhodnou vlastní
-              údržbou příp. manipulací ze strany objednatele nebo třetích osob,
-              dále za vady vzniklé v důsledku špatného technického stavu nebo
-              vad věci, na níž příp. k níž má být dílo zhotoveno nebo budovy,
-              jejíž jsou součástí, dále za vady skla a vady v důsledku
-              nerovností stěn, stropu, zábradlí a ostatních souvisejících části
-              lodžie nebo balkónu, které nemůže ovlivnit zhotovitel. 4. V
-              případě zásahu do konstrukce zábradlí, montáže jakýchkoliv
-              předmětů, různých konstrukcí a zasklívacích systému jiným
-              subjektem nebo osobou než výrobcem, zhotovitelem nebo jeho
-              subdodavatelem pozbývá objednatel nároky ze záruky a zhotovitel
-              ani výrobce nezodpovídá za způsobené vady a škody. VI. Obchodní
-              tajemství 1. Poskytnutá výkresová či jiná dokumentace a
-              technologické předpisy, pracovní postupy a návody, jakož i
-              informace a znalosti nabyté při provádění díla (zejména informace
-              o výrobě certifikovaných výrobků zhotovitele) tvoří obchodní
-              tajemství a důvěrné informace zhotovitele. 2. Objednatel se
-              zavazuje, že všechny skutečnosti, které jsou obchodním tajemstvím
-              zhotovitele, použije pouze pro plnění závazků vzniklých na základě
-              realizačních smluv, že je nebude dále rozšiřovat nebo sdělovat
-              třetím osobám a ani je třetím osobám nezpřístupní či nepředá.
-              Objednatel po provedení díla dle příslušné realizační smlouvy
-              vrátí zhotoviteli kompletní dokumentaci a další převzaté podklady
-              za účelem skartace, případně archivace. 3. Objednatel schválením
-              objednávky a výrobní dokumentace potvrzuje a respektuje výrobní
-              postupy, patenty a technické řešení, nebude je zneužívat a
-              kopírovat patenty, technické řešení, konstrukce profilů vzhled,
-              design. 4. Objednatel si je vědom, že všechny profily a technická
-              řešení jsou patentovány u EVROPSKÉHO PATENTOVACÍHO ÚŘADU EUIPO, a
-              v případě porušení práv patentovaných konstrukcí společnosti
-              SCHNEIDER construction s.r.o. a duševního vlastnictví Kamila
-              Schneidera ponese všechny právní důsledky. 5. Objednatel se
-              zavazuje uzavírat smlouvy a spolupracovat se zhotovitelem čestně,
-              jednat s běžnou péčí a poctivě a ctít zákonná ustanovení a
-              respektovat všechna práva duševního vlastnictví, zejména autorská
-              práva na technická řešení, patenty apod. a nebude je zneužívat. 6.
-              Objednatel bez dovolení zhotovitele nebude používat a nepřenechá k
-              užívání třetí osobě fotografie, reference, certifikáty,
-              konstrukční řešení, vizualizace a patenty získané v souvislosti s
-              jednáním o uzavření smlouvy či s uzavřením, a nebude je vydávat za
-              své. VII. Závěrečná ustanovení 1. Smlouva nabývá platnosti a
-              účinnosti dnem podpisu smluvních stran. Smlouva se řídí
-              ustanoveními § 2586 a násl. zákona č. 513/1991. 2. Smlouva může
-              být měněna nebo doplňována pouze po dohodě stran formou písemných
-              dodatků. 3. Tyto všeobecné obchodní podmínky jsou platné od
-              1.1.2020. V případě rozporu smlouvy a těchto VOP platí ujednání
-              smlouvy.
+              ">I. Úvodní ustanovení
+1. Tyto všeobecné obchodní podmínky (dále jen „obchodní podmínky“ nebo „VOP“) obchodní společnosti SCHNEIDER construction s.r.o., sídlem Bolatice, Průmyslová 957/5, PSČ 747 23, IČ 27790991, zapsané v obchodním rejstříku vedeném Krajským soudem v Ostravě, oddíl C, vložka 51900 (dále jen „zhotovitel“) upravují v souladu s ustanovením § 1751 odst. 1 zákona č. 89/2012 Sb., občanský zákoník (dále jen „občanský zákoník“) vzájemná práva a povinnosti smluvních stran vzniklé v souvislosti nebo na základě smlouvy o dílo (dále jen „smlouva“) uzavírané mezi zhotovitele a jinou osobou (dále jen „objednatelem“).
+2.Nedílnou součástí každé smlouvy, kterou v rámci obchodních vztahů založených smlouvou budou tyto VOP. Neobsahuje-li smlouva v konkrétním případě odlišné ustanovení, použití jakýchkoliv všeobecných podmínek objednatele je vyloučeno. Součástí smlouvy jsou rovněž písemná oboustranně akceptovaná právní jednání (upřesnění předmětu díla, místa plnění apod.) v podobě písemné či elektronické komunikace smluvních stran jakož i přílohy, které mají dle vůle smluvních stran ke smlouvě jako její nedílná součást náležet.
+II. Uzavření smlouvy
+1. Veškeré neadresné nabídky zhotovitele nebo nabídky označené jako nezávazné nebo předběžné se považují za orientační a nezávazné. Adresnou nabídku je zhotovitele oprávněn odvolat i ve lhůtě k jejímu přijetí, která (nebude-li stanoveno v konkrétním případě jinak) činí 14 dnů ode dne doručení nabídky objednateli.
+2. Objednávky učiněné na základě nabídek zhotovitele se považují z návrh na uzavření smlouvy, a smlouva se považuje za uzavřenou, budou-li objednávky ze strany zhotovitele akceptovány. Údaje uvedené v objednávce objednatelem jsou pro objednatele závazné a tento je není oprávněn měnit či doplňovat bez předchozího písemného souhlasu zhotovitele.
+3. Objednávky mohou být činěny písemně nebo prostřednictvím e-mailu. Akceptace objednávky bude probíhat písemně nebo e-mailem na adresu, ze které byla objednávka odeslána, příp. na jinou elektronickou adresu uvedenou v objednávce.
+4. Objednávka objednatele musí obsahovat přesnou specifikaci požadovaného díla, tedy zejména název a číselné označení zakázky, cenu díla dle cenové nabídky zhotovitele, číslo cenové nabídky, popis místa plnění, kontaktní údaje objednatele, výkresovou dokumentaci, rozsahu díla (druh díla, množství, rozměry, barva, tloušťka skla), termín pro zaměření díla, datum činění objednávky, a musí být podepsaná osobou oprávněnou zastupovat objednatele. V objednávce musí být uvedeno, že si je objednatel vědom závaznosti těchto VOP při uzavření smluvního vztahu se zhotovitelem.
+5. V případě objednávky, kdy bude nutné pro provedení díla vypracovat technické řešení (výrobní dokumentaci) ze strany zhotovitele, je objednatel povinen technické řešení před zahájením provádění díla na základě konkrétní objednávky písemně odsouhlasit. Zhotovitel není povinen provést dílo, které by neodpovídalo technickým možnostem a parametrům dílů, které mají být v rámci provádění díla instalovány nebo neodsouhlasil-li objednatele technické řešení.
+6. Změny a doplňky smlouvy lze provést pouze po dohodě obou smluvních stran formou písemných dodatků s výjimkou stanovení termínu výroby dílů určených k provedení díla a termínu konečného provedení díla stanoveného zhotovitelem (dále jen „termín výroby dílů a provedení díla“). Učiní-li jedna ze smluvních stran nabídku ve smyslu § 1731 občanského zákoníku, vylučuje se její akceptace s odchylkou s výjimkou odchylky v termínu výroby díků a provedení díla ze strany zhotovitele. V daném případě se akceptace s odchylkou bude považovat za zcela nový návrh druhé strany, který rovněž nelze akceptovat s odchylkou. Neplatnost právního jednání (v důsledku nedodržení jeho ujednané formy) souvisejícího s touto smlouvou lze namítat i v případě, že již bylo některou ze smluvních stran plněno. Ustanovení § 582 odst. 2 NOZ se proto nepoužije.
+
+III. Podmínky plnění díla
+1. Smluvní strany se mohou po uzavření smlouvy o dílo dohodnout na rozšíření díla (tzv. vícepráce). Tato dohoda musí být uzavřena ve formě písemného dodatku ke smlouvě o dílo a musí obsahovat předmět a rozsah víceprací a cenu za tyto vícepráce. Cena za vícepráce bude objednateli zhotovitelem fakturována se splatností do 30 dnů od provedení víceprací. Budou-li vícepráce provedeny a nedojde-li k uzavření dodatku ke smlouvě, bude cena za jejich provedení účtována dle cen obvyklých jako bezdůvodné obohacení.
+2. Zhotovitel provede díla v termínech sjednaných. Objednatel je povinen na výzvu umožnit zhotoviteli přístup k místu, ve kterém má být dílo zhotovováno (na staveniště), a to nejpozději vždy do 3 dnů od výzvy ke zpřístupnění místa. Termín pro zhotovení díla se prodlužuje o dobu, po kterou bude objednatel v prodlení s umožněním zhotoviteli přístupu k předmětnému místu či s přípravou stavební připravenosti stavby pro provedení díla. Zhotovitel není v prodlení, dojde-li k prodlení s výrobou dílů či materiálu, které mají být použity k provedení díla a jejichž výrobu provádí třetí osoba, a to po dobu prodlení třetí osoby. Zhotovitel je oprávněn prodloužit ve smlouvě sjednaný termín plnění o dobu 4 týdnů z důvodu nezaviněných zhotovitelem či objednatelem.
+3. V případě nepříznivých klimatických podmínek (dešťové či sněhové přeháňky po dobu delší než 1 hod. denně nebo silný vítr nebo teploty pod 10 st. C) se o dobu takovýchto nepříznivých klimatických podmínek prodlužujte termín provádění díla. Zápisem ve stavebním deníku mohou strany dohodnout náhradní postup a termíny.
+4. Zhotovitel splní svou povinnost zhotovit dílo jeho provedením a předáním. O předání díla bude sepsáno potvrzení o předání a převzetí díla.
+5. Objednatel je povinen převzít na výzvu zhotovitele dílo příp. jeho dílčí část. Dílčí částí se rozumí část, jejíž provedení, dokončení a užívání není ovlivněno provedením zbylé části. Objednatel je povinen převzít provedené dílo příp. jeho část s ojedinělými drobnými vadami, které samy o sobě ani ve spojení s jinými nebrání užívání díla funkčně nebo esteticky, ani jeho užívání podstatným způsobem neomezují a zhotovitel se v zápise o předání zaváže v přiměřené lhůtě tyto odstranit.
+6. Poruší-li objednatel svou povinnost převzít dílo, má se dílo za převzato dnem, ve kterém měl objednatel dle výzvy dílo převzít, avšak tak neučinil. Dílo se má za převzaté i v případě, že výzva k převzetí nebyla objednateli doručena z důvodů, že objednatel odmítl převzít poštovní zásilku s výzvou nebo ji nevyzvedl v úložní lhůtě a rovněž předáním osobě užívající oprávněně nemovitost nebo její část (např. byt), na které bylo dílo nebo jeho část provedeno.
+7. Vlastníkem zhotovovaného díla je zhotovitel. Objednatel nabývá vlastnické právo k dílu okamžikem převzetí díla a zaplacením sjednané ceny díla v plné výši.
+8. Objednatel na sebe přebírá nebezpečí změn okolností ve smyslu ust. § 1765 odst. 2 občanského zákoníku. Tím nejsou dotčena práva zhotovitele vyplývající ze změny okolností dle ust. § 1765 a 1766 občanského zákoníku.
+III. Platební podmínky
+1. Nárok zhotovitele na zaplacení ceny díla vzniká předáním díla.
+2. Součástí ceny díla je DPH v zákonem stanovené výši. Smluvní strany dohodly, že v případě zvýšení sazeb DPH po uzavření smlouvy je zhotovitel oprávněn navýšit cenu díla o částku odpovídající rozdílu do DPH kalkulované sazbou platnou ke dni vyúčtování ceny díla.
+3. Zhotovitel provede písemné vyúčtování ceny díla a poskytnutých záloh ve formě daňového dokladu, který zhotovitel vystaví a vydá objednateli.
+4. Cena prací a materiálů, uvedená v akceptované objednávce nemůže být zhotovitelem překročena bez dohody smluvních stran. K překročení ceny díla může dojít jen v důsledku provedení víceprací odsouhlasených stranami.
+5. Více nebo méně práce do výše 10% z celkové ceny díla lze řešit zápisem do stavebního/montážního deníku nebo na základě rozpočtu podepsaným oběma stranami, nad 10% z celkové ceny díla pak dodatkem ke smlouvě, ve kterém strany dohodnou i případnou úpravu termínu předání díla a ceny díla.
+
+6. Objednatel je povinen poskytnout zálohu na cenu díla ve výši min. 30 % ceny díla, splatnou nejpozději do 10 dnů do uzavření smlouvy. Zhotovitel je oprávněn průběžně účtovat dílčí realizovaná plnění, max. však do výše 90% smluvní ceny díla, se splatností 21 dnů ode dne vystavení vyúčtování,
+7. Konečná faktura (s odečteným dílčím plněním) bude vystavena po dokončení a předání díla, se splatností max. 21 dnů ode dne vystavení.
+8. Pro případ prodlení objednatele s převzetím díla je zhotovitel oprávněn vyúčtovat cenu díla ode dne, ve kterém měl objednatel na výzvu zhotovitele dílo převzít, avšak tak neoprávněn neučinil.
+9. Faktura musí být doručena minimálně pět pracovních dnů před datem splatnosti. V pochybnostech se má za to, že byla doručena třetí pracovní den po odeslání.
+10. Uhrazením se rozumí připsání hrazené částky na účet zhotovitele.
+11. Pro případ prodlení se zaplacením ceny má zhotovitel právo požadovat vedle zaplacení ceny také úroky z prodlení a smluvní pokutu ve výši 0,05 % z dlužné částky za každý den prodlení s úhradou.
+IV. Práva a povinnosti smluvních stran
+1. Objednatel je povinen:
+a) poskytnout zhotoviteli veškerou nutnou součinnost, zejména mu na jeho žádost včas poskytnout údaje nutné pro zhotovení díla a zajistit zpřístupnění místa zhotovování díla;
+b) nejpozději do tří pracovních dnů ode dne uzavření smlouvy určit oprávněnou osobu, která bude oprávněna jednat jménem objednatele, zejména provádět kontrolu provádění díla, není li tato uvedena ve smlouvě o dílo;
+c) nejpozději do 30 dnů ode dne podpisu smlouvy předat zhotoviteli staveniště a veškeré věci nezbytné pro provedení díla a zajistit souhlas resp. povolení příslušného správního orgánu, nezbytné k provádění díla v souladu s právními předpisy a souhlas vlastníka stavby.
+2. Zhotovitel je povinen:
+a) provést dílo řádně a včas; při provádění díla je zhotovitel povinen postupovat v souladu s pokyny objednatele,
+b) včas informovat objednatele o všech zjištěných nedostatcích a závadách technického charakteru, o nevhodnosti objednatelem požadovaného nebo dodaného materiálu či nevhodnosti pokynů objednatele,
+c) přerušit v nezbytném rozsahu provádění díla, jestliže nevhodné věci nebo pokyny objednatele překáží v řádném provádění díla, a to do doby výměny věcí nebo změny pokynů nebo písemného sdělení objednatele, že na provádění díla trvá s použitím předaných věcí a daných pokynů. O dobu, po kterou bylo nutno provádění díla přerušit, se prodlužuje lhůta stanovená pro jeho dokončení.
+d) oznámit bez zbytečného odkladu objednateli skryté překážky, týkající se věci, na níž má být provedena oprava nebo úprava, nebo místa, kde má být dílo provedeno, pokud tyto překážky znemožňují provedení díla dohodnutým způsobem a je povinen navrhnout objednateli změnu díla. Do dosažení dohody o změně díla je zhotovitel oprávněn provádění díla přerušit. O dobu přerušení se prodlužuje termín pro splnění díla. Nedohodnou-li se strany v přiměřené lhůtě na změně smlouvy, může kterákoliv ze stran od smlouvy odstoupit;
+e) vrátit po dokončení díla bez zbytečného odkladu objednateli ty podklady a věci, které mu byly předány k provedení díla a nebyly při provádění díla zpracovány.
+3. Kontrola plnění
+3.1. Smluvní strany se dohodly, že průběh provádění díla a plnění smlouvy je objednatel oprávněn kontrolovat prostřednictvím oprávněné osoby, kterou objednatel stanoví.
+3.2. Oprávněná osoba objednatele je oprávněna zejména sledovat, zda je dílo realizováno dle smluvených podmínek, technických norem a jiných právních předpisů, a pokynů a požadavků objednatele. Dále bude oprávněna vystupovat jménem objednatele a zastupovat objednatele při jednáních se zhotovitelem; není však oprávněna měnit nebo doplňovat obsah této smlouvy, může však udělovat zhotoviteli písemné pokyny upřesňující požadavky na dílo v rozsahu sjednaném smlouvou o dílo.
+
+3.3.O průběhu kontroly bude vždy pořízen zápis, který bude obsahovat zejména datum kontroly, předmět a průběh kontroly, shledané vady, připomínky a pokyny oprávněné osoby objednatele, vyjádření oprávněné osoby zhotovitele, závěry kontroly, podpisy oprávněné osoby objednatele a oprávněné osoby zhotovitele.
+V. Odpovědnost za vady díla
+1. Zhotovitel odpovídá za vady, které má dílo při převzetí objednatelem, jakož i za vady, které se projeví po převzetí v záruční době. Záruční doba na práce činí 36 měsíců ode dne převzetí díla a záruční doba na materiál, jednotlivé části díla a mechanismy je poskytnuta po dobu záruční doby poskytované jejich výrobcem. Záruční doba se zkracuje o dobu, kterou objednatel neoprávněně odmítl převzít dílo.
+2. Objednatel má v případě řádné a oprávněné reklamace vad díla nároky z vad díla stanovené občanským zákoníkem. Tyto nároky musí být písemně uplatněny u zhotovitele v záruční době bez zbytečného odkladu poté, co je mohl při dostatečné péči zjistit. Zjevné vady musí objednatel reklamovat nejpozději při převzetí a předání díla.
+3. Zhotovitel neodpovídá za vady díla vzniklé nevhodnou vlastní údržbou příp. manipulací ze strany objednatele nebo třetích osob, dále za vady vzniklé v důsledku špatného technického stavu nebo vad věci, na níž příp. k níž má být dílo zhotoveno nebo budovy, jejíž jsou součástí, dále za vady skla a vady v důsledku nerovností stěn, stropu, zábradlí a ostatních souvisejících části lodžie nebo balkónu, které nemůže ovlivnit zhotovitel.
+4. V případě zásahu do konstrukce zábradlí, montáže jakýchkoliv předmětů, různých konstrukcí a zasklívacích systému jiným subjektem nebo osobou než výrobcem, zhotovitelem nebo jeho subdodavatelem pozbývá objednatel nároky ze záruky a zhotovitel ani výrobce nezodpovídá za způsobené vady a škody.
+VI. Obchodní tajemství
+1. Poskytnutá výkresová či jiná dokumentace a technologické předpisy, pracovní postupy a návody, jakož i informace a znalosti nabyté při provádění díla (zejména informace o výrobě certifikovaných výrobků zhotovitele) tvoří obchodní tajemství a důvěrné informace zhotovitele.
+2. Objednatel se zavazuje, že všechny skutečnosti, které jsou obchodním tajemstvím zhotovitele, použije pouze pro plnění závazků vzniklých na základě realizačních smluv, že je nebude dále rozšiřovat nebo sdělovat třetím osobám a ani je třetím osobám nezpřístupní či nepředá. Objednatel po provedení díla dle příslušné realizační smlouvy vrátí zhotoviteli kompletní dokumentaci a další převzaté podklady za účelem skartace, případně archivace.
+3. Objednatel schválením objednávky a výrobní dokumentace potvrzuje a respektuje výrobní postupy, patenty a technické řešení, nebude je zneužívat a kopírovat patenty, technické řešení, konstrukce profilů vzhled, design.
+4. Objednatel si je vědom, že všechny profily a technická řešení jsou patentovány u EVROPSKÉHO PATENTOVACÍHO ÚŘADU EUIPO, a v případě porušení práv patentovaných konstrukcí společnosti SCHNEIDER construction s.r.o. a duševního vlastnictví Kamila Schneidera ponese všechny právní důsledky.
+5. Objednatel se zavazuje uzavírat smlouvy a spolupracovat se zhotovitelem čestně, jednat s běžnou péčí a poctivě a ctít zákonná ustanovení a respektovat všechna práva duševního vlastnictví, zejména autorská práva na technická řešení, patenty apod. a nebude je zneužívat.
+6. Objednatel bez dovolení zhotovitele nebude používat a nepřenechá k užívání třetí osobě fotografie, reference, certifikáty, konstrukční řešení, vizualizace a patenty získané v souvislosti s jednáním o uzavření smlouvy či s uzavřením, a nebude je vydávat za své.
+VII. Závěrečná ustanovení
+1. Smlouva nabývá platnosti a účinnosti dnem podpisu smluvních stran. Smlouva se řídí ustanoveními § 2586 a násl. zákona č. 513/1991.
+2. Smlouva může být měněna nebo doplňována pouze po dohodě stran formou písemných dodatků.
             </p>
           </div>
         </td>
